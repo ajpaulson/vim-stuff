@@ -104,6 +104,9 @@ Bundle 'Townk/vim-autoclose'
 Bundle 'scrooloose/syntastic'
 " Syntax checking hacks
 
+Bundle 'myusuf3/numbers.vim'
+" switches number display type when you switch mode
+
 """""""""""""""""""""""""""""""""
 "  END BUNDLES / START MAIN RC  "
 """""""""""""""""""""""""""""""""
@@ -142,6 +145,9 @@ map <leader>g :GundoToggle<CR>
 
 " .less to .css, lessc is required
 nnoremap ,m :w <BAR> !lessc % > %:t:r.css<CR><space>
+
+" keystroke to toggle numbers.vim plugin
+nnoremap <F3> :NumbersToggle<CR>
 
 " Ignore these files when completing
 set wildignore+=*.o,*.obj,.git,*.pyc
