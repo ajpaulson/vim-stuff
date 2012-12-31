@@ -107,7 +107,7 @@ Bundle 'scrooloose/syntastic'
 Bundle 'myusuf3/numbers.vim'
 " switches number display type when you switch mode
 
-Bundle "Lokaltog/distinguished.vim"
+Bundle "Lokaltog/vim-distinguished"
 " Distinguished colour scheme
 
 """""""""""""""""""""""""""""""""
