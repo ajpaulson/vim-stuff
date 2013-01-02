@@ -113,6 +113,9 @@ Bundle 'Lokaltog/vim-distinguished'
 Bundle 'sickill/vim-monokai'
 " Monokai
 
+Bundle 'baskerville/bubblegum'
+" Bubblegum colour scheme
+
 """""""""""""""""""""""""""""""""
 "  END BUNDLES / START MAIN RC  "
 """""""""""""""""""""""""""""""""
