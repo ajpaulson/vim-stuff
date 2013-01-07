@@ -209,7 +209,6 @@ set number " Display line numbers
 set backspace=indent,eol,start "Allow Backspace in insert mode"
 set numberwidth=1 " using only 1 column (and 1 space) while possible
 colorscheme molokai
-hi Normal ctermbg=16
 set title " show title in console title bar
 set wildmenu " Menu completion in command mode on <Tab>
 set wildmode=full " <Tab> cycles between all matching choices.
