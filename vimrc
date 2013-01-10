@@ -116,6 +116,12 @@ Bundle 'sickill/vim-monokai'
 Bundle 'baskerville/bubblegum'
 " Bubblegum colour scheme
 
+Bundle 'chrisbra/csv.vim'
+" awesome stuff to deal with csv files
+
+Bundle 'rhysd/open-pdf.vim'
+" open pdfs nice and easy like
+
 """""""""""""""""""""""""""""""""
 "  END BUNDLES / START MAIN RC  "
 """""""""""""""""""""""""""""""""
@@ -189,6 +195,10 @@ let g:tex_flavor='latex'
 " Set options for zencoding
 let g:user_zen_expandabbr_key = '<c-y>'
 let g:use_zen_comlete_tag = 1
+
+" Set options for open-pdf
+let g:pdf_convert_on_edit = 1
+let g:pdf_convert_on_read = 1
 
 " close preview window automatically when we move around
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
