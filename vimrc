@@ -122,6 +122,9 @@ Bundle 'chrisbra/csv.vim'
 Bundle 'rhysd/open-pdf.vim'
 " open pdfs nice and easy like
 
+Bundle 'tpope/vim-afterimage'
+" edit ICO, GIF, and PNG files by converting them to text equiv.
+
 """""""""""""""""""""""""""""""""
 "  END BUNDLES / START MAIN RC  "
 """""""""""""""""""""""""""""""""
