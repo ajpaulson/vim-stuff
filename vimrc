@@ -121,6 +121,10 @@ Bundle 'chrisbra/csv.vim'
 
 Bundle 'rhysd/open-pdf.vim'
 " open pdfs nice and easy like
+
+Bundle 'xuhdev/SingleCompile'
+" more convenient compilation and execution of single source files
+
 """""""""""""""""""""""""""""""""
 "  END BUNDLES / START MAIN RC  "
 """""""""""""""""""""""""""""""""
@@ -208,6 +212,10 @@ nmap <F8> :TagbarToggle<CR>
 
 map <leader>f :bn<CR>
 map <leader>r :bp<CR>
+
+" SingleCompile mappings
+nmap <F9> :SCCompile<cr>
+nmap <F10> :SCCompileRun<cr>
 
 " ==========================================================
 " Basic Settings
