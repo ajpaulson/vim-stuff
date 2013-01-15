@@ -83,9 +83,6 @@ Bundle 'h1mesuke/unite-outline'
 Bundle 'basyura/TweetVim'
 " Twitter client for vim
 
-Bundle 'tomasr/molokai.git'
-" Molokai colour scheme
-
 Bundle 'majutsushi/tagbar'
 " Display tags of source code
 
