@@ -125,6 +125,9 @@ Bundle 'rhysd/open-pdf.vim'
 Bundle 'xuhdev/SingleCompile'
 " more convenient compilation and execution of single source files
 
+Bundle 'lessmind/vim-css-color'
+" highlight colors as themselves
+
 """""""""""""""""""""""""""""""""
 "  END BUNDLES / START MAIN RC  "
 """""""""""""""""""""""""""""""""
