@@ -232,6 +232,7 @@ set wildmode=full " <Tab> cycles between all matching choices.
 set t_Co=256
 set timeoutlen=400
 set ttimeoutlen=500
+set pastetoggle=<F2>
 
 " show a line at column 79
 if exists("&colorcolumn")
