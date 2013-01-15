@@ -125,7 +125,7 @@ Bundle 'rhysd/open-pdf.vim'
 Bundle 'xuhdev/SingleCompile'
 " more convenient compilation and execution of single source files
 
-Bundle 'lessmind/vim-css-color'
+Bundle 'lilydjwg/colorizer'
 " highlight colors as themselves
 
 """""""""""""""""""""""""""""""""
@@ -219,6 +219,9 @@ map <leader>r :bp<CR>
 " SingleCompile mappings
 nmap <F9> :SCCompile<cr>
 nmap <F10> :SCCompileRun<cr>
+
+" Colour highlight mapping
+nmap <F4> :ColorToggle<cr>
 
 " ==========================================================
 " Basic Settings
