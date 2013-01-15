@@ -116,6 +116,9 @@ Bundle 'sickill/vim-monokai'
 Bundle 'baskerville/bubblegum'
 " Bubblegum colour scheme
 
+Bundle 'flazz/vim-colorschemes'
+" a big load of colourschemes
+
 Bundle 'chrisbra/csv.vim'
 " awesome stuff to deal with csv files
 
@@ -231,7 +234,7 @@ filetype plugin indent on " enable loading indent file for filetype
 set number " Display line numbers
 set backspace=indent,eol,start "Allow Backspace in insert mode"
 set numberwidth=1 " using only 1 column (and 1 space) while possible
-colorscheme bloodshot
+colorscheme molokai
 set title " show title in console title bar
 set wildmenu " Menu completion in command mode on <Tab>
 set wildmode=full " <Tab> cycles between all matching choices.
