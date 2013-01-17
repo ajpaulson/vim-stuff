@@ -95,9 +95,6 @@ Bundle 'voithos/vim-multiselect'
 Bundle 'vim-scripts/genutils'
 " General utility functions
 
-Bundle 'Townk/vim-autoclose'
-" Automatically closes parens
-
 Bundle 'scrooloose/syntastic'
 " Syntax checking hacks
 
@@ -247,6 +244,7 @@ endif
 "
 "     """ Moving Around/Editing
 set cursorline " have a line indicate the cursor location
+set cursorcolumn " have a column to indicate the cursor location
 set nostartofline " Avoid moving cursor to BOL when jumping around
 set virtualedit=block " Let cursor move past the last char in <C-v> mode
 set scrolloff=3 " Keep 3 context lines above and below the cursor
