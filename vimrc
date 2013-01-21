@@ -17,7 +17,7 @@ Bundle 'gmarik/vundle'
 """"""""""""""""""""""
 
 " Powerline for Vim
-Bundle 'Lokaltog/vim-powerline'
+Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 
 Bundle 'vim-scripts/The-NERD-tree.git'
 " NERD tree file manager
