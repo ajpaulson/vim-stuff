@@ -125,6 +125,9 @@ Bundle 'xuhdev/SingleCompile'
 Bundle 'lilydjwg/colorizer'
 " highlight colors as themselves
 
+Bundle 'jamessan/vim-gnupg'
+" transparent and secure editing of gpg encrypted files
+
 """""""""""""""""""""""""""""""""
 "  END BUNDLES / START MAIN RC  "
 """""""""""""""""""""""""""""""""
@@ -198,6 +201,9 @@ let g:tex_flavor='latex'
 " Set options for zencoding
 let g:user_zen_expandabbr_key = '<c-y>'
 let g:use_zen_comlete_tag = 1
+
+" Set options for clang complete
+let g:clang_use_library = 1
 
 " Set options for open-pdf
 let g:pdf_convert_on_edit = 1
