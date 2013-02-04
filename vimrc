@@ -101,15 +101,6 @@ Bundle 'scrooloose/syntastic'
 Bundle 'myusuf3/numbers.vim'
 " switches number display type when you switch mode
 
-Bundle 'Lokaltog/vim-distinguished'
-" Distinguished colour scheme
-
-Bundle 'sickill/vim-monokai'
-" Monokai
-
-Bundle 'baskerville/bubblegum'
-" Bubblegum colour scheme
-
 Bundle 'flazz/vim-colorschemes'
 " a big load of colourschemes
 
@@ -242,6 +233,14 @@ set t_Co=256
 set timeoutlen=400
 set ttimeoutlen=500
 set pastetoggle=<F2>
+" Turn off swap files
+set noswapfile
+set nobackup
+set nowb
+"keep undo history across sessions by storing in file
+silent !mkdir ~/.vim/backups > /dev/null 2>&1
+set undodir=~/.vim/backups
+set undofile
 
 " show a line at column 79
 if exists("&colorcolumn")
