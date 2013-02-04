@@ -119,6 +119,15 @@ Bundle 'lilydjwg/colorizer'
 Bundle 'jamessan/vim-gnupg'
 " transparent and secure editing of gpg encrypted files
 
+Bundle 'tpope/vim-markdown'
+" Markdown runtime files
+
+Bundle 'tpope/vim-sleuth'
+" Heuristically set buffer options
+
+Bundle 'tpope/vim-unimpaired'
+" pairs of handy bracket matchings
+
 """""""""""""""""""""""""""""""""
 "  END BUNDLES / START MAIN RC  "
 """""""""""""""""""""""""""""""""
@@ -259,10 +268,6 @@ set matchtime=2 " (for only .2 seconds).
 set nowrap " don't wrap text
 set linebreak " don't wrap textin the middle of a word
 set autoindent " always set autoindenting on
-set tabstop=4 " <tab> inserts 4 spaces
-set shiftwidth=4 " but an indent level is 2 spaces wide.
-set softtabstop=4 " <BS> over an autoindent deletes both spaces.
-set expandtab " Use spaces, not tabs, for autoindent/tab key.
 set shiftround " rounds indent to a multiple of shiftwidth
 set matchpairs+=<:> " show matching <> (html mainly) as well
 set foldmethod=indent " allow us to fold on indents
