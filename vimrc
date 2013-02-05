@@ -128,6 +128,12 @@ Bundle 'tpope/vim-sleuth'
 Bundle 'tpope/vim-unimpaired'
 " pairs of handy bracket matchings
 
+Bundle 'yuratomo/gmail.vim'
+" GMAIL!
+
+Bundle 'Shougo/vimproc'
+" Essential for gmail.vim
+
 """""""""""""""""""""""""""""""""
 "  END BUNDLES / START MAIN RC  "
 """""""""""""""""""""""""""""""""
@@ -204,6 +210,9 @@ let g:use_zen_comlete_tag = 1
 
 " Set options for clang complete
 let g:clang_use_library = 1
+
+" for Gmail.vim
+source ~/.vim/gmail-settings.vim
 
 " Set options for open-pdf
 let g:pdf_convert_on_edit = 1
