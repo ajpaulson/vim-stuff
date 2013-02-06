@@ -2,6 +2,7 @@ vim-stuff
 =========
 
 Heavily dependent on Vundle (https://github.com/gmarik/vundle).
+(I have added a check to see if vundle is installed - if it isn't then it will install and update automagically)
 
 You will also need a patched font for the powerline (https://github.com/Lokaltog/powerline-fonts)
 
