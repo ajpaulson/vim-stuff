@@ -80,20 +80,11 @@ Bundle 'tyru/open-browser.vim'
 Bundle 'mattn/webapi-vim'
 " vim interface to Web-API
 
-Bundle 'basyura/twibill.vim'
-" Twitter API wrapper
-
-Bundle 'basyura/bitly.vim'
-" Vimscript utility for bit.ly
-
 Bundle 'Shougo/unite.vim'
 " Ultimate interface to unite all sources
 
 Bundle 'h1mesuke/unite-outline'
 " Outline source for unit.vim
-
-Bundle 'basyura/TweetVim'
-" Twitter client for vim
 
 Bundle 'majutsushi/tagbar'
 " Display tags of source code
