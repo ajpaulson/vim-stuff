@@ -140,6 +140,9 @@ Bundle 'yuratomo/gmail.vim'
 Bundle 'Shougo/vimproc'
 " Essential for gmail.vim
 
+Bundle 'scrooloose/nerdcommenter'
+" Intensely orgasmic commenting
+
 """""""""""""""""""""""""""""""""
 "  END BUNDLES / START MAIN RC  "
 """""""""""""""""""""""""""""""""
@@ -155,10 +158,6 @@ map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimr
 
 " Open NerdTree
 map <leader>n :NERDTreeToggle<CR>
-
-" open/close the quickfix window
-nmap <leader>c :copen<CR>
-nmap <leader>cc :cclose<CR>
 
 " ctrl-jklm changes to that split
 map <c-j> <c-w>j
