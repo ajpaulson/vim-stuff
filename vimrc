@@ -6,6 +6,7 @@ set nocompatible        " be iMproved
 filetype off            " required!
 
 " Setting up Vundle - the vim plugin bundler
+" shamelessly nicke from github.com/fisadev
 let iCanHazVundle=1
 let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
 if !filereadable(vundle_readme)
