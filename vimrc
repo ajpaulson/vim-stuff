@@ -140,6 +140,9 @@ Bundle 'tpope/vim-sleuth'
 Bundle 'tpope/vim-unimpaired'
 " pairs of handy bracket matchings
 
+Bundle 'tpope/vim-eunuch'
+" helpers for Unix
+
 Bundle 'yuratomo/gmail.vim'
 " GMAIL!
 
