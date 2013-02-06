@@ -15,4 +15,7 @@ clang_complete is dependent on libclang
 Install vundle, symlink vimrc to ~/.vimrc and run:
     :BundleInstall
 
+Add gmail.vim settings to gmail-settings.vim
+Add colourscheme declarations to colours.vim
+
 hopefully that should all work.
