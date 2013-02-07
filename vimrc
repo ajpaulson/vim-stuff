@@ -322,5 +322,9 @@ set smartcase " unless uppercase letters are used in the regex.
 set hlsearch " Highlight searches by default.
 set incsearch " Incrementally search while typing a /regex
 
+""" easier navigation of tabs
+""" :sb <tab-complete name of file open in other tab>
+set switchbuf=useopen,usetab
+
 "Remove trailing whitespace on <leader>S
 nnoremap <leader>S :%s/\s\+$//<cr>:let @/=' '<CR>
