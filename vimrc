@@ -143,6 +143,9 @@ Bundle 'Shougo/vimproc'
 Bundle 'scrooloose/nerdcommenter'
 " Intensely orgasmic commenting
 
+Bundle 'vim-scripts/CSApprox'
+" Make Gvim only colourschemes work in terminal
+
 """""""""""""""""""""""""""""""""
 "  END BUNDLES / START MAIN RC  "
 """""""""""""""""""""""""""""""""
