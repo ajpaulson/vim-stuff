@@ -92,9 +92,6 @@ Bundle 'majutsushi/tagbar'
 Bundle 'groenewege/vim-less'
 " LESS Stylesheet syntax, indent, and autocomplete
 
-Bundle 'voithos/vim-multiselect'
-" Multiselection in visual mode
-
 Bundle 'vim-scripts/genutils'
 " General utility functions
 
