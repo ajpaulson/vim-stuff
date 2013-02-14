@@ -31,7 +31,7 @@ Bundle 'gmarik/vundle'
 " Powerline for Vim
 Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 
-Bundle 'vim-scripts/The-NERD-tree.git'
+Bundle 'scrooloose/nerdtree'
 " NERD tree file manager
 
 Bundle 'mutewinter/nginx.vim.git'
@@ -50,8 +50,8 @@ Bundle 'tpope/vim-fugitive.git'
 Bundle 'tpope/vim-git.git'
 " Syntax highlighting for git config files
 
-Bundle 'fholgado/minibufexpl.vim.git'
-" Visually display what buffers are currently opened
+Bundle 'vim-scripts/bufexplorer.zip'
+" Buffer explorer/browser
 
 Bundle 'tpope/vim-surround.git'
 " Allows you to surround text with open/close tags
