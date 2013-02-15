@@ -253,8 +253,6 @@ set title " show title in console title bar
 set wildmenu " Menu completion in command mode on <Tab>
 set wildmode=full " <Tab> cycles between all matching choices.
 set t_Co=256
-set timeoutlen=400
-set ttimeoutlen=500
 set pastetoggle=<F2>
 " Turn off swap files
 set noswapfile
@@ -268,6 +266,16 @@ set undofile
 " show a line at column 79
 if exists("&colorcolumn")
     set colorcolumn=79
+endif
+
+" set a faster switch from insert to normal mode for powerline
+if ! has('gui_running')
+    set ttimeoutlen=10
+    augroup FastEscape
+        autocmd!
+        au InsertEnter * set timeoutlen=0
+        au InsertLeave * set timeoutlen=1000
+    augroup END
 endif
 "
 "     """ Moving Around/Editing
@@ -308,7 +316,7 @@ set shortmess+=a " Use [+]/[RO]/[w] for modified/readonly/written.
 set ruler " Show some info, even without statuslines.
 set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,5c5V\ %P%) " a ruler on steroids
 set laststatus=2 " Always show statusline, even if only 1 window.
-set statusline=%<%f\ (%{&ft})%=%-19(%3l,%02c%03V%)%{fugitive#statusline()}
+"set statusline=%<%f\ (%{&ft})%=%-19(%3l,%02c%03V%)%{fugitive#statusline()}
 let g:Powerline_symbols = 'fancy'
 let g:Powerline_cache_enabled = 1
 
