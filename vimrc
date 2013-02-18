@@ -143,6 +143,9 @@ Bundle 'scrooloose/nerdcommenter'
 Bundle 'vim-scripts/CSApprox'
 " Make Gvim only colourschemes work in terminal
 
+Bundle 'ajpaulson/tabbar.vim'
+" make the tabbar more user friendly
+
 """""""""""""""""""""""""""""""""
 "  END BUNDLES / START MAIN RC  "
 """""""""""""""""""""""""""""""""
@@ -240,6 +243,21 @@ nmap <F10> :SCCompileRun<cr>
 " Colour highlight mapping
 nmap <F4> :ColorToggle<cr>
 
+map <leader>t :tabnew<cr>
+map <leader>q :tabclose<cr>
+map gp :tabprevious<cr>
+
+" Tab navigation in with alt-#
+noremap <A-1> :tabnext 1<CR>
+noremap <A-2> :tabnext 2<CR>
+noremap <A-3> :tabnext 3<CR>
+noremap <A-4> :tabnext 4<CR>
+noremap <A-5> :tabnext 5<CR>
+noremap <A-6> :tabnext 6<CR>
+noremap <A-7> :tabnext 7<CR>
+noremap <A-8> :tabnext 8<CR>
+noremap <A-9> :tabnext 9<CR>
+noremap <A-0> :tabnext 0<CR>
 " ==========================================================
 " Basic Settings
 " ==========================================================
@@ -292,9 +310,9 @@ set linebreak " don't wrap textin the middle of a word
 set autoindent " always set autoindenting on
 set shiftround " rounds indent to a multiple of shiftwidth
 set matchpairs+=<:> " show matching <> (html mainly) as well
-set foldmethod=indent " allow us to fold on indents
-set foldlevel=99 " don't fold by default
-set foldcolumn=1 " show the fold column
+"set foldmethod=indent " allow us to fold on indents
+"set foldlevel=99 " don't fold by default
+"set foldcolumn=1 " show the fold column
 set encoding=utf-8
 
 """" Reading/Writing
