@@ -143,8 +143,8 @@ Bundle 'scrooloose/nerdcommenter'
 Bundle 'vim-scripts/CSApprox'
 " Make Gvim only colourschemes work in terminal
 
-Bundle 'ajpaulson/tabbar'
-" make the tabbar more user friendly
+Bundle 'ajpaulson/vim-tabs'
+" Make vim's tabbar more useable
 
 """""""""""""""""""""""""""""""""
 "  END BUNDLES / START MAIN RC  "
