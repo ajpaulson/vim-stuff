@@ -247,17 +247,6 @@ map <leader>t :tabnew<cr>
 map <leader>q :tabclose<cr>
 map gp :tabprevious<cr>
 
-" Tab navigation in with alt-#
-noremap <A-1> :tabnext 1<CR>
-noremap <A-2> :tabnext 2<CR>
-noremap <A-3> :tabnext 3<CR>
-noremap <A-4> :tabnext 4<CR>
-noremap <A-5> :tabnext 5<CR>
-noremap <A-6> :tabnext 6<CR>
-noremap <A-7> :tabnext 7<CR>
-noremap <A-8> :tabnext 8<CR>
-noremap <A-9> :tabnext 9<CR>
-noremap <A-0> :tabnext 0<CR>
 " ==========================================================
 " Basic Settings
 " ==========================================================
