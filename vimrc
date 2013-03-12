@@ -208,6 +208,8 @@ inoremap <expr> <cr> pumvisible() ? "\<c-y>" : "\<c-g>u\<cr>"
 inoremap <expr> <tab> pumvisible() ? "\<c-n>" : "\<tab>"
 inoremap <expr> <s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 let g:SuperTabCrMapping = 0
+let g:SuperTabMappingBackward = '<c-tab>' " This is won't work in console but I wanted to free up Shift+Tab for literal tab which I actually use.
+let g:SuperTabMappingLiteral = '<s-tab>'
 
 " Prevent vim from setting filetype to `plaintex`
 let g:tex_flavor='latex'
