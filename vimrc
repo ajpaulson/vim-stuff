@@ -249,6 +249,12 @@ map <leader>t :tabnew<cr>
 map <leader>q :tabclose<cr>
 map gp :tabprevious<cr>
 
+" Improve register use
+" Don't update default register when deleting single characters
+noremap x "_x
+" Don't update default register when pasting in visual mode
+vnoremap p "_c<Esc>P
+
 " ==========================================================
 " Basic Settings
 " ==========================================================
