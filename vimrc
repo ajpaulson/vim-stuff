@@ -131,20 +131,17 @@ Bundle 'tpope/vim-unimpaired'
 Bundle 'tpope/vim-eunuch'
 " helpers for Unix
 
-Bundle 'yuratomo/gmail.vim'
-" GMAIL!
-
-Bundle 'Shougo/vimproc'
-" Essential for gmail.vim
-
 Bundle 'scrooloose/nerdcommenter'
 " Intensely orgasmic commenting
 
-Bundle 'vim-scripts/CSApprox'
-" Make Gvim only colourschemes work in terminal
-
 Bundle 'ajpaulson/vim-tabs'
 " Make vim's tabbar more useable
+
+Bundle 'godlygeek/tabular'
+" Text alignment helper (dependency for tablemode)
+
+Bundle 'dhruvasagar/vim-table-mode'
+" Instant table creation (<leader>tm to toggle)
 
 """""""""""""""""""""""""""""""""
 "  END BUNDLES / START MAIN RC  "
@@ -220,9 +217,6 @@ let g:use_zen_comlete_tag = 1
 
 " Set options for clang complete
 let g:clang_use_library = 1
-
-" for Gmail.vim
-source ~/.vim/gmail-settings.vim
 
 " Set options for open-pdf
 let g:pdf_convert_on_edit = 1
