@@ -277,6 +277,8 @@ set nowb
 silent !mkdir ~/.vim/backups > /dev/null 2>&1
 set undodir=~/.vim/backups
 set undofile
+" Anonymous register uses system clipboard
+set clipboard=unnamedplus
 
 " show a line at column 79
 if exists("&colorcolumn")
