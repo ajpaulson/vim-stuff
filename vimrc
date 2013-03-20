@@ -143,6 +143,8 @@ Bundle 'godlygeek/tabular'
 Bundle 'dhruvasagar/vim-table-mode'
 " Instant table creation (<leader>tm to toggle)
 
+Bundle 'vim-scripts/std_c.zip'
+" Extra Standard C syntax
 """""""""""""""""""""""""""""""""
 "  END BUNDLES / START MAIN RC  "
 """""""""""""""""""""""""""""""""
