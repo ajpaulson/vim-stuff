@@ -227,6 +227,9 @@ let g:clang_use_library = 1
 let g:pdf_convert_on_edit = 1
 let g:pdf_convert_on_read = 1
 
+" Set options for indent guides
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
 " close preview window automatically when we move around
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
