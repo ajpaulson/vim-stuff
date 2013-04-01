@@ -145,6 +145,9 @@ Bundle 'dhruvasagar/vim-table-mode'
 
 Bundle 'vim-scripts/std_c.zip'
 " Extra Standard C syntax
+
+Bundle 'nathanaelkane/vim-indent-guides'
+" Some pretty swish indent guides
 """""""""""""""""""""""""""""""""
 "  END BUNDLES / START MAIN RC  "
 """""""""""""""""""""""""""""""""
