@@ -28,8 +28,8 @@ Bundle 'gmarik/vundle'
 "  Bundles go here:  "
 """"""""""""""""""""""
 
-" Powerline for Vim
 Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+" Powerline for Vim
 
 Bundle 'scrooloose/nerdtree'
 " NERD tree file manager
@@ -213,53 +213,19 @@ inoremap <expr> <cr> pumvisible() ? "\<c-y>" : "\<c-g>u\<cr>"
 " Use tab to scroll through autocomplete menus
 inoremap <expr> <tab> pumvisible() ? "\<c-n>" : "\<tab>"
 inoremap <expr> <s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
-let g:SuperTabCrMapping = 0
-let g:SuperTabMappingBackward = '<c-tab>' " This is won't work in console but I wanted to free up Shift+Tab for literal tab which I actually use.
-let g:SuperTabMappingLiteral = '<s-tab>'
-
-" Prevent vim from setting filetype to `plaintex`
-let g:tex_flavor='latex'
-
-" Set options for zencoding
-let g:user_zen_expandabbr_key = '<c-y>'
-let g:use_zen_comlete_tag = 1
-
-" Set options for clang complete
-let g:clang_use_library = 1
-
-" Set options for open-pdf
-let g:pdf_convert_on_edit = 1
-let g:pdf_convert_on_read = 1
-
-" Set options for indent guides
-let g:indent_guides_start_level = 2
-let g:indent_guides_guide_size = 1
-" close preview window automatically when we move around
-autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
-autocmd InsertLeave * if pumvisible() == 0|pclose|endif
-
-" Map TagBar toggle to F8
-nmap <F8> :TagbarToggle<CR>
-
-map <leader>f :bn<CR>
-map <leader>r :bp<CR>
-
-" SingleCompile mappings
-nmap <F9> :SCCompile<cr>
-nmap <F10> :SCCompileRun<cr>
-
-" Colour highlight mapping
-nmap <F4> :ColorToggle<cr>
-
-map <leader>t :tabnew<cr>
-map <leader>q :tabclose<cr>
-map gp :tabprevious<cr>
 
 " Improve register use
 " Don't update default register when deleting single characters
 noremap x "_x
 " Don't update default register when pasting in visual mode
 vnoremap p "_c<Esc>P
+
+map <leader>f :bn<CR>
+map <leader>r :bp<CR>
+
+map <leader>t :tabnew<cr>
+map <leader>q :tabclose<cr>
+map gp :tabprevious<cr>
 
 " ==========================================================
 " Basic Settings
@@ -340,10 +306,8 @@ set ruler " Show some info, even without statuslines.
 set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,5c5V\ %P%) " a ruler on steroids
 set laststatus=2 " Always show statusline, even if only 1 window.
 "set statusline=%<%f\ (%{&ft})%=%-19(%3l,%02c%03V%)%{fugitive#statusline()}
-let g:Powerline_symbols = 'fancy'
-let g:Powerline_cache_enabled = 1
-
 " displays tabs with :set list & displays when a line runs off-screen
+
 set listchars=tab:>-,eol:¶,trail:➤,precedes:<,extends:>
 set list
 
@@ -359,3 +323,47 @@ set switchbuf=useopen,usetab
 
 "Remove trailing whitespace on <leader>S
 nnoremap <leader>S :%s/\s\+$//<cr>:let @/=' '<CR>
+
+"""""""""""""""""""""""""""
+"  Plugin Configurations  "
+"""""""""""""""""""""""""""
+
+let g:SuperTabCrMapping = 0
+let g:SuperTabMappingBackward = '<c-tab>' " This is won't work in console but I wanted to free up Shift+Tab for literal tab which I actually use.
+let g:SuperTabMappingLiteral = '<s-tab>'
+
+" Prevent vim from setting filetype to `plaintex`
+let g:tex_flavor='latex'
+
+" Set options for zencoding
+let g:user_zen_expandabbr_key = '<c-y>'
+let g:use_zen_comlete_tag = 1
+
+" Set options for clang complete
+let g:clang_use_library = 1
+
+" Set options for open-pdf
+let g:pdf_convert_on_edit = 1
+let g:pdf_convert_on_read = 1
+
+" Set options for Powerline
+let g:Powerline_symbols = 'fancy'
+let g:Powerline_cache_enabled = 1
+
+" Set options for indent guides
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
+" close preview window automatically when we move around
+autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+
+" Map TagBar toggle to F8
+nmap <F8> :TagbarToggle<CR>
+
+" SingleCompile mappings
+nmap <F9> :SCCompile<cr>
+nmap <F10> :SCCompileRun<cr>
+
+" Colour highlight mapping
+nmap <F4> :ColorToggle<cr>
+
