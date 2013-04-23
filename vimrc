@@ -148,6 +148,10 @@ Bundle 'vim-scripts/std_c.zip'
 
 Bundle 'nathanaelkane/vim-indent-guides'
 " Some pretty swish indent guides
+
+Bundle 'tpope/vim-abolish'
+" Search, Substitute, and Abbreviate multiple variants of a word
+
 """""""""""""""""""""""""""""""""
 "  END BUNDLES / START MAIN RC  "
 """""""""""""""""""""""""""""""""
