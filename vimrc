@@ -152,6 +152,9 @@ Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'tpope/vim-abolish'
 " Search, Substitute, and Abbreviate multiple variants of a word
 
+Bundle 'mhinz/vim-startify'
+" Start screen for Vim
+
 """""""""""""""""""""""""""""""""
 "  END BUNDLES / START MAIN RC  "
 """""""""""""""""""""""""""""""""
