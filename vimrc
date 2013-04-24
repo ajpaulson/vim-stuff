@@ -155,6 +155,9 @@ Bundle 'tpope/vim-abolish'
 Bundle 'mhinz/vim-startify'
 " Start screen for Vim
 
+Bundle 'szw/vim-tags'
+" Ctags generator for vim
+
 """""""""""""""""""""""""""""""""
 "  END BUNDLES / START MAIN RC  "
 """""""""""""""""""""""""""""""""
