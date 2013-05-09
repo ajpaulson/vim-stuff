@@ -149,7 +149,7 @@ Bundle 'mhinz/vim-startify'
 Bundle 'szw/vim-tags'
 " Ctags generator for vim
 
-Bundle 'gcmt/taboo'
+Bundle 'gcmt/taboo.vim'
 " so I can rename tabs
 
 """""""""""""""""""""""""""""""""
