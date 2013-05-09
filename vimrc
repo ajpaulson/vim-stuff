@@ -125,9 +125,6 @@ Bundle 'tpope/vim-eunuch'
 Bundle 'scrooloose/nerdcommenter'
 " Intensely orgasmic commenting
 
-Bundle 'ajpaulson/vim-tabs'
-" Make vim's tabbar more useable
-
 Bundle 'godlygeek/tabular'
 " Text alignment helper (dependency for tablemode)
 
@@ -149,7 +146,7 @@ Bundle 'mhinz/vim-startify'
 Bundle 'szw/vim-tags'
 " Ctags generator for vim
 
-Bundle 'gcmt/taboo.vim'
+Bundle 'ajpaulson/taboo.vim'
 " so I can rename tabs
 
 """""""""""""""""""""""""""""""""
@@ -357,6 +354,9 @@ let g:indent_guides_guide_size = 1
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
+" Set options for Taboo
+let g:taboo_tab_format = "%N[%f]%m"
+let g:taboo_renamed_tab_format = "%N[%f]%m"
 " Map TagBar toggle to F8
 nmap <F8> :TagbarToggle<CR>
 
@@ -367,3 +367,19 @@ nmap <F10> :SCCompileRun<cr>
 " Colour highlight mapping
 nmap <F4> :ColorToggle<cr>
 
+" Tabline colours
+hi TabLineFill ctermfg=244 ctermbg=236
+hi Tabline ctermfg=244 ctermbg=236
+hi TablineSel ctermfg=22 ctermbg=148
+
+" Tab navigation in with alt-#
+map <leader>1 :tabnext 1<CR>
+map <leader>2 :tabnext 2<CR>
+map <leader>3 :tabnext 3<CR>
+map <leader>4 :tabnext 4<CR>
+map <leader>5 :tabnext 5<CR>
+map <leader>6 :tabnext 6<CR>
+map <leader>7 :tabnext 7<CR>
+map <leader>8 :tabnext 8<CR>
+map <leader>9 :tabnext 9<CR>
+map <leader>0 :tabnext 0<CR>
