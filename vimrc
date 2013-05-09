@@ -50,9 +50,6 @@ Bundle 'tpope/vim-fugitive.git'
 Bundle 'tpope/vim-git.git'
 " Syntax highlighting for git config files
 
-Bundle 'vim-scripts/bufexplorer.zip'
-" Buffer explorer/browser
-
 Bundle 'tpope/vim-surround.git'
 " Allows you to surround text with open/close tags
 
@@ -104,12 +101,6 @@ Bundle 'myusuf3/numbers.vim'
 Bundle 'flazz/vim-colorschemes'
 " a big load of colourschemes
 
-Bundle 'chrisbra/csv.vim'
-" awesome stuff to deal with csv files
-
-Bundle 'rhysd/open-pdf.vim'
-" open pdfs nice and easy like
-
 Bundle 'xuhdev/SingleCompile'
 " more convenient compilation and execution of single source files
 
@@ -157,6 +148,9 @@ Bundle 'mhinz/vim-startify'
 
 Bundle 'szw/vim-tags'
 " Ctags generator for vim
+
+Bundle 'gcmt/taboo'
+" so I can rename tabs
 
 """""""""""""""""""""""""""""""""
 "  END BUNDLES / START MAIN RC  "
