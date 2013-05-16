@@ -149,6 +149,9 @@ Bundle 'szw/vim-tags'
 Bundle 'ajpaulson/taboo.vim'
 " so I can rename tabs
 
+Bundle 'FredKSchott/CoVim'
+" Collaborative editing
+
 """""""""""""""""""""""""""""""""
 "  END BUNDLES / START MAIN RC  "
 """""""""""""""""""""""""""""""""
