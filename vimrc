@@ -27,15 +27,8 @@ Bundle 'gmarik/vundle'
 """"""""""""""""""""""
 "  Bundles go here:  "
 """"""""""""""""""""""
-
-Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
-" Powerline for Vim
-
 Bundle 'scrooloose/nerdtree'
 " NERD tree file manager
-
-Bundle 'mutewinter/nginx.vim.git'
-" Nginx syntax highlighting and filetype detection
 
 Bundle 'gmarik/github-search.vim'
 " Github Search. To use: :GHSearchRepo <example> [pressing 'c' clones to 
@@ -59,9 +52,6 @@ Bundle 'mileszs/ack.vim.git'
 Bundle 'ervandew/supertab.git'
 " SuperTab
 
-Bundle 'mattn/zencoding-vim.git'
-" big ass template snippets etc
-
 Bundle 'Rip-Rip/clang_complete.git'
 " Autocomplete C using Clang
 
@@ -79,6 +69,9 @@ Bundle 'mattn/webapi-vim'
 
 Bundle 'Shougo/unite.vim'
 " Ultimate interface to unite all sources
+
+Bundle 'Shougo/vimproc.vim'
+"needed to make Unite stuff work
 
 Bundle 'h1mesuke/unite-outline'
 " Outline source for unit.vim
@@ -151,6 +144,8 @@ Bundle 'ajpaulson/taboo.vim'
 
 Bundle 'FredKSchott/CoVim'
 " Collaborative editing
+
+Bundle 'Greduan/vim-usefulstatusline'
 
 """""""""""""""""""""""""""""""""
 "  END BUNDLES / START MAIN RC  "
@@ -323,6 +318,12 @@ set switchbuf=useopen,usetab
 
 "Remove trailing whitespace on <leader>S
 nnoremap <leader>S :%s/\s\+$//<cr>:let @/=' '<CR>
+
+"Leader p - sweet ass shit like ctrl-p.vim
+nnoremap <leader>p :Unite file_rec/async<cr>
+
+" Space / does some grepping
+nnoremap <space>/ :Unite grep:.<cr>
 
 """""""""""""""""""""""""""
 "  Plugin Configurations  "
