@@ -371,6 +371,17 @@ nmap <F10> :SCCompileRun<cr>
 " Colour highlight mapping
 nmap <F4> :ColorToggle<cr>
 
+" use either silver-surfer or ack-grep for Unite Grep
+      if executable('ag')
+        let g:unite_source_grep_command='ag'
+        let g:unite_source_grep_default_opts='--nocolor --nogroup --hidden'
+        let g:unite_source_grep_recursive_opt=''
+      elseif executable('ack')
+        let g:unite_source_grep_command='ack'
+        let g:unite_source_grep_default_opts='--no-heading --no-color -a'
+        let g:unite_source_grep_recursive_opt=''
+      endif
+
 " Tabline colours
 hi TabLineFill ctermfg=244 ctermbg=236
 hi Tabline ctermfg=244 ctermbg=236
