@@ -220,7 +220,6 @@ set title " show title in console title bar
 set wildmenu " Menu completion in command mode on <Tab>
 set wildmode=full " <Tab> cycles between all matching choices.
 set t_Co=256
-set pastetoggle=<c-p>
 " Turn off swap files
 set noswapfile
 set nobackup
