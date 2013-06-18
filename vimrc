@@ -321,20 +321,8 @@ let g:SuperTabMappingLiteral = '<s-tab>'
 " Prevent vim from setting filetype to `plaintex`
 let g:tex_flavor='latex'
 
-" Set options for zencoding
-let g:user_zen_expandabbr_key = '<c-y>'
-let g:use_zen_comlete_tag = 1
-
 " Set options for clang complete
 let g:clang_use_library = 1
-
-" Set options for open-pdf
-let g:pdf_convert_on_edit = 1
-let g:pdf_convert_on_read = 1
-
-" Set options for Powerline
-let g:Powerline_symbols = 'fancy'
-let g:Powerline_cache_enabled = 1
 
 " Set options for indent guides
 let g:indent_guides_start_level = 2
