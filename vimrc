@@ -49,6 +49,12 @@ Bundle 'tpope/vim-surround.git'
 Bundle 'mileszs/ack.vim.git'
 " Searching and junk
 
+Bundle 'ervandew/supertab.git'
+" SuperTab
+
+Bundle 'Rip-Rip/clang_complete.git'
+" Autocomplete C using Clang
+
 Bundle 'SirVer/ultisnips'
 " The best snippet plugin around
 
@@ -125,9 +131,6 @@ Bundle 'ajpaulson/taboo.vim'
 " so I can rename tabs
 
 Bundle 'Greduan/vim-usefulstatusline'
-
-Bundle 'Valloric/YouCompleteMe'
-" *THE* code completion engine
 
 """""""""""""""""""""""""""""""""
 "  END BUNDLES / START MAIN RC  "
@@ -311,8 +314,15 @@ nnoremap <space>/ :Unite grep:.<cr>
 "  Plugin Configurations  "
 """""""""""""""""""""""""""
 
+let g:SuperTabCrMapping = 0
+let g:SuperTabMappingBackward = '<c-tab>' " This is won't work in console but I wanted to free up Shift+Tab for literal tab which I actually use.
+let g:SuperTabMappingLiteral = '<s-tab>'
+
 " Prevent vim from setting filetype to `plaintex`
 let g:tex_flavor='latex'
+
+" Set options for clang complete
+let g:clang_use_library = 1
 
 " Set options for indent guides
 let g:indent_guides_start_level = 2
