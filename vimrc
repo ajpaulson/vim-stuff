@@ -79,9 +79,6 @@ Bundle 'h1mesuke/unite-outline'
 Bundle 'majutsushi/tagbar'
 " Display tags of source code
 
-Bundle 'groenewege/vim-less'
-" LESS Stylesheet syntax, indent, and autocomplete
-
 Bundle 'vim-scripts/genutils'
 " General utility functions
 
@@ -103,9 +100,6 @@ Bundle 'lilydjwg/colorizer'
 Bundle 'jamessan/vim-gnupg'
 " transparent and secure editing of gpg encrypted files
 
-Bundle 'tpope/vim-markdown'
-" Markdown runtime files
-
 Bundle 'tpope/vim-sleuth'
 " Heuristically set buffer options
 
@@ -117,12 +111,6 @@ Bundle 'tpope/vim-eunuch'
 
 Bundle 'scrooloose/nerdcommenter'
 " Intensely orgasmic commenting
-
-Bundle 'godlygeek/tabular'
-" Text alignment helper (dependency for tablemode)
-
-Bundle 'dhruvasagar/vim-table-mode'
-" Instant table creation (<leader>tm to toggle)
 
 Bundle 'vim-scripts/std_c.zip'
 " Extra Standard C syntax
@@ -141,9 +129,6 @@ Bundle 'szw/vim-tags'
 
 Bundle 'ajpaulson/taboo.vim'
 " so I can rename tabs
-
-Bundle 'FredKSchott/CoVim'
-" Collaborative editing
 
 Bundle 'Greduan/vim-usefulstatusline'
 
