@@ -30,6 +30,9 @@ Bundle 'gmarik/vundle'
 Bundle 'scrooloose/nerdtree'
 " NERD tree file manager
 
+Bundle 'jistr/vim-nerdtree-tabs'
+" Have NerdTree in all tabs
+
 Bundle 'gmarik/github-search.vim'
 " Github Search. To use: :GHSearchRepo <example> [pressing 'c' clones to 
 " ~/src/github_user/github_repo]
@@ -146,7 +149,7 @@ map <leader>v :sp ~/.vimrc<CR><C-W>_
 map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 
 " Open NerdTree
-map <leader>n :NERDTreeToggle<CR>
+map <leader>n :NERDTreeTabsToggle<CR>
 
 " ctrl-jklm changes to that split
 map <c-j> <c-w>j
