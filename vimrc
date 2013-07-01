@@ -200,10 +200,6 @@ noremap x "_x
 " Don't update default register when pasting in visual mode
 vnoremap p "_c<Esc>P
 
-map <leader>f :bn<CR>
-map <leader>r :bp<CR>
-
-map <leader>t :tabnew<cr>
 map <leader>q :tabclose<cr>
 map gp :tabprevious<cr>
 
@@ -303,8 +299,27 @@ set switchbuf=useopen,usetab
 "Remove trailing whitespace on <leader>S
 nnoremap <leader>S :%s/\s\+$//<cr>:let @/=' '<CR>
 
-"Leader p - sweet ass shit like ctrl-p.vim
-nnoremap <leader>p :Unite file_rec/async<cr>
+"""""""""""""""""
+"  Unite stuff  "
+"""""""""""""""""
+
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
+nnoremap <leader>t :<C-r>Unite -no-split -buffer-name=files -start-insert file_rec/async:!<cr>
+nnoremap <leader>f :<C-r>Unite -no-split -buffer-name=files -start-insert file<cr>
+nnoremap <leader>r :<C-r>Unite -no-split -buffer-name=mru -start-insert file_mru<cr>
+nnoremap <leader>o :<C-r>Unite -no-split -buffer-name=outline -start-insert outline<cr>
+nnoremap <leader>y :<C-r>Unite -no-split -buffer-name=yank history/yank<cr>
+nnoremap <leader>e :<C-r>Unite -no-split -buffer-name=buffer buffer<cr>
+
+" Custom mappings for the unite buffer
+autocmd FileType unite call s:unite_settings()
+function! s:unite_settings()
+    " Play nice with supertab
+    let b:SuperTabDisabled=1
+    " Enable navigation with Ctrl-j and Ctrl-k in insert mode
+    imap <buffer> <C-j> <Plug>(unite_select_next_line)
+    imap <buffer> <C-k> <Plug>(unite_select_previous_line)
+endfunction
 
 " Space / does some grepping
 nnoremap <space>/ :Unite grep:.<cr>
@@ -353,6 +368,8 @@ nmap <F4> :ColorToggle<cr>
         let g:unite_source_grep_default_opts='--no-heading --no-color -a'
         let g:unite_source_grep_recursive_opt=''
       endif
+
+let g:unite_source_history_yank_enable = 1
 
 " Tabline colours
 hi TabLineFill ctermfg=244 ctermbg=236
