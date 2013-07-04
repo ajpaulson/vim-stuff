@@ -215,6 +215,7 @@ set number " Display line numbers
 set backspace=indent,eol,start "Allow Backspace in insert mode"
 set numberwidth=1 " using only 1 column (and 1 space) while possible
 source ~/.vim/colours.vim
+source ~/.vim/folds.vim
 set title " show title in console title bar
 set wildmenu " Menu completion in command mode on <Tab>
 set wildmode=full " <Tab> cycles between all matching choices.
@@ -259,9 +260,6 @@ set linebreak " don't wrap textin the middle of a word
 set autoindent " always set autoindenting on
 set shiftround " rounds indent to a multiple of shiftwidth
 set matchpairs+=<:> " show matching <> (html mainly) as well
-"set foldmethod=indent " allow us to fold on indents
-"set foldlevel=99 " don't fold by default
-"set foldcolumn=1 " show the fold column
 set encoding=utf-8
 
 """" Reading/Writing
