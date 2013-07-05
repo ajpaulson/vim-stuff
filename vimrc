@@ -76,7 +76,7 @@ Bundle 'Shougo/unite.vim'
 Bundle 'Shougo/vimproc.vim'
 "needed to make Unite stuff work
 
-Bundle 'h1mesuke/unite-outline'
+Bundle 'Shougo/unite-outline'
 " Outline source for unit.vim
 
 Bundle 'majutsushi/tagbar'
