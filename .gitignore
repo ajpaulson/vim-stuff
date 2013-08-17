@@ -4,3 +4,4 @@ backups/*
 gmail-settings.vim
 colours.vim
 folds.vim
+after/*

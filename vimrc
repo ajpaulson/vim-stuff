@@ -342,6 +342,7 @@ let g:tex_flavor='latex'
 
 " Set options for clang complete
 let g:clang_use_library = 1
+let g:clang_library_path='/usr/lib/llvm-3.4/lib'
 
 " Set options for indent guides
 let g:indent_guides_start_level = 2
@@ -360,8 +361,9 @@ nmap <F8> :TagbarToggle<CR>
 nmap <F9> :SCCompile<cr>
 nmap <F10> :SCCompileRun<cr>
 
-" Colour highlight mapping
-nmap <F4> :ColorToggle<cr>
+" Colorizer changed all their shit
+nmap <F4> <Plug>Colorizer
+let g:colorizer_startup = 0
 
 " use either silver-surfer or ack-grep for Unite Grep
       if executable('ag')
