@@ -288,7 +288,7 @@ set laststatus=2 " Always show statusline, even if only 1 window.
 "set statusline=%<%f\ (%{&ft})%=%-19(%3l,%02c%03V%)%{fugitive#statusline()}
 " displays tabs with :set list & displays when a line runs off-screen
 
-set listchars=tab:>-,eol:¶,trail:➤,precedes:<,extends:>
+set listchars=tab:>-,eol:¶,trail:≖,precedes:<,extends:>
 set list
 
 """ Searching and Patterns
