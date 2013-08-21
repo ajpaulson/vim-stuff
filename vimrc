@@ -133,7 +133,7 @@ Bundle 'szw/vim-tags'
 Bundle 'ajpaulson/taboo.vim'
 " so I can rename tabs
 
-Bundle 'Greduan/vim-usefulstatusline'
+Bundle 'ajpaulson/usefulstatusline'
 
 """""""""""""""""""""""""""""""""
 "  END BUNDLES / START MAIN RC  "
@@ -255,7 +255,7 @@ set cursorline " have a line indicate the cursor location
 set cursorcolumn " have a column to indicate the cursor location
 set nostartofline " Avoid moving cursor to BOL when jumping around
 set virtualedit=block " Let cursor move past the last char in <C-v> mode
-set scrolloff=3 " Keep 3 context lines above and below the cursor
+set scrolloff=5 " Keep 3 context lines above and below the cursor
 set backspace=2 " Allow backspacing over autoindent, EOL, and BOL
 set showmatch " Briefly jump to a paren once it's balanced
 set matchtime=2 " (for only .2 seconds).
