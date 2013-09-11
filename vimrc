@@ -140,6 +140,7 @@ Bundle 'ajpaulson/usefulstatusline'
 """""""""""""""""""""""""""""""""
 
 filetype plugin indent on   " required!
+runtime macros/matchit.vim " enable matchit
 
 let mapleader="," " change the leader to be a comma vs slash
 
@@ -150,6 +151,9 @@ map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimr
 
 " Open NerdTree
 map <leader>n :NERDTreeTabsToggle<CR>
+
+" Disable NerdTreeTabs on gvim startup
+let g:nerdtree_tabs_open_on_gui_startup = 0
 
 " ctrl-jklm changes to that split
 map <c-j> <c-w>j
