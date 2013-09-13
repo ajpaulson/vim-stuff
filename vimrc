@@ -34,7 +34,7 @@ Bundle 'jistr/vim-nerdtree-tabs'
 " Have NerdTree in all tabs
 
 Bundle 'gmarik/github-search.vim'
-" Github Search. To use: :GHSearchRepo <example> [pressing 'c' clones to 
+" Github Search. To use: :GHSearchRepo <example> [pressing 'c' clones to
 " ~/src/github_user/github_repo]
 
 Bundle 'sjl/gundo.vim.git'
