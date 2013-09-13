@@ -115,9 +115,6 @@ Bundle 'tpope/vim-eunuch'
 Bundle 'scrooloose/nerdcommenter'
 " Intensely orgasmic commenting
 
-Bundle 'vim-scripts/std_c.zip'
-" Extra Standard C syntax
-
 Bundle 'nathanaelkane/vim-indent-guides'
 " Some pretty swish indent guides
 
