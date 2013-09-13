@@ -43,8 +43,8 @@ Bundle 'sjl/gundo.vim.git'
 Bundle 'tpope/vim-fugitive.git'
 " Interface with git from vim
 
-Bundle 'tpope/vim-git.git'
-" Syntax highlighting for git config files
+Bundle 'sheerun/vim-polyglot'
+" A solid collection of language packs for vim
 
 Bundle 'tpope/vim-surround.git'
 " Allows you to surround text with open/close tags
