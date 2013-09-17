@@ -27,109 +27,40 @@ Bundle 'gmarik/vundle'
 """"""""""""""""""""""
 "  Bundles go here:  "
 """"""""""""""""""""""
-Bundle 'scrooloose/nerdtree'
-" NERD tree file manager
-
-Bundle 'jistr/vim-nerdtree-tabs'
-" Have NerdTree in all tabs
-
-Bundle 'gmarik/github-search.vim'
-" Github Search. To use: :GHSearchRepo <example> [pressing 'c' clones to
-" ~/src/github_user/github_repo]
-
-Bundle 'sjl/gundo.vim.git'
-" Visual Undo in vim with diff
-
-Bundle 'tpope/vim-fugitive.git'
-" Interface with git from vim
-
-Bundle 'sheerun/vim-polyglot'
-" A solid collection of language packs for vim
-
-Bundle 'tpope/vim-surround.git'
-" Allows you to surround text with open/close tags
-
-Bundle 'mileszs/ack.vim.git'
-" Searching and junk
-
-Bundle 'ervandew/supertab.git'
-" SuperTab
-
-Bundle 'Rip-Rip/clang_complete.git'
-" Autocomplete C using Clang
-
-Bundle 'SirVer/ultisnips'
-" The best snippet plugin around
-
-Bundle 'vim-scripts/mail.vim'
-" Mail syntax highlighting
-
-Bundle 'tyru/open-browser.vim'
-" Open URI from vim
-
-Bundle 'mattn/webapi-vim'
-" vim interface to Web-API
-
-Bundle 'Shougo/unite.vim'
-" Ultimate interface to unite all sources
-
-Bundle 'Shougo/vimproc.vim'
-"needed to make Unite stuff work
-
-Bundle 'Shougo/unite-outline'
-" Outline source for unit.vim
-
-Bundle 'majutsushi/tagbar'
-" Display tags of source code
-
-Bundle 'vim-scripts/genutils'
-" General utility functions
-
-Bundle 'scrooloose/syntastic'
-" Syntax checking hacks
-
-Bundle 'myusuf3/numbers.vim'
-" switches number display type when you switch mode
-
-Bundle 'flazz/vim-colorschemes'
-" a big load of colourschemes
-
-Bundle 'xuhdev/SingleCompile'
-" more convenient compilation and execution of single source files
-
-Bundle 'lilydjwg/colorizer'
-" highlight colors as themselves
-
-Bundle 'jamessan/vim-gnupg'
-" transparent and secure editing of gpg encrypted files
-
-Bundle 'tpope/vim-sleuth'
-" Heuristically set buffer options
-
-Bundle 'tpope/vim-unimpaired'
-" pairs of handy bracket matchings
-
-Bundle 'tpope/vim-eunuch'
-" helpers for Unix
-
-Bundle 'scrooloose/nerdcommenter'
-" Intensely orgasmic commenting
-
-Bundle 'Yggdroot/indentLine'
-" Show indentation levels
-
 Bundle 'tpope/vim-abolish'
-" Search, Substitute, and Abbreviate multiple variants of a word
-
-Bundle 'mhinz/vim-startify'
-" Start screen for Vim
-
+Bundle 'tpope/vim-fugitive.git'
+Bundle 'tpope/vim-surround.git'
+Bundle 'tpope/vim-sleuth'
+Bundle 'tpope/vim-unimpaired'
+Bundle 'tpope/vim-eunuch'
+Bundle 'Shougo/unite.vim'
+Bundle 'Shougo/vimproc.vim'
+Bundle 'Shougo/unite-outline'
+Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/syntastic'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'vim-scripts/mail.vim'
+Bundle 'vim-scripts/genutils'
+Bundle 'jistr/vim-nerdtree-tabs'
+Bundle 'gmarik/github-search.vim'
+Bundle 'sjl/gundo.vim.git'
+Bundle 'sheerun/vim-polyglot'
+Bundle 'mileszs/ack.vim.git'
+Bundle 'ervandew/supertab.git'
+Bundle 'Rip-Rip/clang_complete.git'
+Bundle 'SirVer/ultisnips'
+Bundle 'tyru/open-browser.vim'
+Bundle 'mattn/webapi-vim'
+Bundle 'majutsushi/tagbar'
 Bundle 'szw/vim-tags'
-" Ctags generator for vim
-
+Bundle 'myusuf3/numbers.vim'
+Bundle 'flazz/vim-colorschemes'
+Bundle 'xuhdev/SingleCompile'
+Bundle 'lilydjwg/colorizer'
+Bundle 'jamessan/vim-gnupg'
+Bundle 'Yggdroot/indentLine'
+Bundle 'mhinz/vim-startify'
 Bundle 'ajpaulson/taboo.vim'
-" so I can rename tabs
-
 Bundle 'ajpaulson/usefulstatusline'
 
 """""""""""""""""""""""""""""""""
@@ -145,12 +76,6 @@ let mapleader="," " change the leader to be a comma vs slash
 " ,V reloads it -- making all changes active (have to save first)
 map <leader>v :sp ~/.vimrc<CR><C-W>_
 map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
-
-" Open NerdTree
-map <leader>n :NERDTreeTabsToggle<CR>
-
-" Disable NerdTreeTabs on gvim startup
-let g:nerdtree_tabs_open_on_gui_startup = 0
 
 " ctrl-jklm changes to that split
 map <c-j> <c-w>j
@@ -168,15 +93,6 @@ imap <C-W> <C-O><C-W>
 
 "Spell Check
 map <c-t> :w!<CR>: !aspell check %<CR>: e! %<CR>
-
-" Load the Gundo window
-map <leader>g :GundoToggle<CR>
-
-" .less to .css, lessc is required
-nnoremap ,m :w <BAR> !lessc % > %:t:r.css<CR><space>
-
-" keystroke to toggle numbers.vim plugin
-nnoremap <F3> :NumbersToggle<CR>
 
 " Ignore these files when completing
 set wildignore+=*.o,*.obj,.git,*.pyc
@@ -275,6 +191,9 @@ set modeline " Allow vim options to be embedded in files;
 set modelines=5 " they must be within the first or last 5 lines.
 set ffs=unix,dos,mac " Try recognizing dos, unix, and mac line endings.
 autocmd BufWritePre * set ff=unix
+" Prevent vim from setting filetype to `plaintex`
+let g:tex_flavor='latex'
+
 
 """" Messages, Info, Status
 set ls=2 " allways show status line
@@ -305,6 +224,23 @@ set switchbuf=useopen,usetab
 "Remove trailing whitespace on <leader>S
 nnoremap <leader>S :%s/\s\+$//<cr>:let @/=' '<CR>
 
+" Tabline colours
+hi TabLineFill ctermfg=244 ctermbg=236
+hi Tabline ctermfg=244 ctermbg=236
+hi TablineSel ctermfg=22 ctermbg=148
+
+" Tab navigation in with alt-#
+map <leader>1 :tabnext 1<CR>
+map <leader>2 :tabnext 2<CR>
+map <leader>3 :tabnext 3<CR>
+map <leader>4 :tabnext 4<CR>
+map <leader>5 :tabnext 5<CR>
+map <leader>6 :tabnext 6<CR>
+map <leader>7 :tabnext 7<CR>
+map <leader>8 :tabnext 8<CR>
+map <leader>9 :tabnext 9<CR>
+map <leader>0 :tabnext 0<CR>
+
 """""""""""""""""
 "  Unite stuff  "
 """""""""""""""""
@@ -330,16 +266,42 @@ endfunction
 " Space / does some grepping
 nnoremap <space>/ :Unite grep:.<cr>
 
+" use either silver-surfer or ack-grep for Unite Grep
+      if executable('ag')
+        let g:unite_source_grep_command='ag'
+        let g:unite_source_grep_default_opts='--nocolor --nogroup --hidden'
+        let g:unite_source_grep_recursive_opt=''
+      elseif executable('ack')
+        let g:unite_source_grep_command='ack'
+        let g:unite_source_grep_default_opts='--no-heading --no-color -a'
+        let g:unite_source_grep_recursive_opt=''
+      endif
+
+let g:unite_source_history_yank_enable = 1
+
 """""""""""""""""""""""""""
 "  Plugin Configurations  "
 """""""""""""""""""""""""""
 
-let g:SuperTabCrMapping = 0
-let g:SuperTabMappingBackward = '<c-tab>' " This is won't work in console but I wanted to free up Shift+Tab for literal tab which I actually use.
-let g:SuperTabMappingLiteral = '<s-tab>'
+" Load the Gundo window
+map <leader>g :GundoToggle<CR>
 
-" Prevent vim from setting filetype to `plaintex`
-let g:tex_flavor='latex'
+" .less to .css, lessc is required
+nnoremap ,m :w <BAR> !lessc % > %:t:r.css<CR><space>
+
+" keystroke to toggle numbers.vim plugin
+nnoremap <F3> :NumbersToggle<CR>
+
+" Open NerdTree
+map <leader>n :NERDTreeTabsToggle<CR>
+
+" Disable NerdTreeTabs on gvim startup
+let g:nerdtree_tabs_open_on_gui_startup = 0
+
+" SuperTab settings
+let g:SuperTabCrMapping = 0
+let g:SuperTabMappingBackward = '<c-tab>' " Free up Shift-Tab
+let g:SuperTabMappingLiteral = '<s-tab>'
 
 " Set options for clang complete
 let g:clang_use_library = 1
@@ -366,32 +328,3 @@ nmap <F10> :SCCompileRun<cr>
 nmap <F4> <Plug>Colorizer
 let g:colorizer_startup = 0
 
-" use either silver-surfer or ack-grep for Unite Grep
-      if executable('ag')
-        let g:unite_source_grep_command='ag'
-        let g:unite_source_grep_default_opts='--nocolor --nogroup --hidden'
-        let g:unite_source_grep_recursive_opt=''
-      elseif executable('ack')
-        let g:unite_source_grep_command='ack'
-        let g:unite_source_grep_default_opts='--no-heading --no-color -a'
-        let g:unite_source_grep_recursive_opt=''
-      endif
-
-let g:unite_source_history_yank_enable = 1
-
-" Tabline colours
-hi TabLineFill ctermfg=244 ctermbg=236
-hi Tabline ctermfg=244 ctermbg=236
-hi TablineSel ctermfg=22 ctermbg=148
-
-" Tab navigation in with alt-#
-map <leader>1 :tabnext 1<CR>
-map <leader>2 :tabnext 2<CR>
-map <leader>3 :tabnext 3<CR>
-map <leader>4 :tabnext 4<CR>
-map <leader>5 :tabnext 5<CR>
-map <leader>6 :tabnext 6<CR>
-map <leader>7 :tabnext 7<CR>
-map <leader>8 :tabnext 8<CR>
-map <leader>9 :tabnext 9<CR>
-map <leader>0 :tabnext 0<CR>
