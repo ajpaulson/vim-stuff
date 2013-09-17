@@ -175,16 +175,6 @@ if exists("&colorcolumn")
     set colorcolumn=79
 endif
 
-" set a faster switch from insert to normal mode for powerline
-if ! has('gui_running')
-    set ttimeoutlen=10
-    augroup FastEscape
-        autocmd!
-        au InsertEnter * set timeoutlen=0
-        au InsertLeave * set timeoutlen=1000
-    augroup END
-endif
-"
 """" Moving Around/Editing
 set cursorline " have a line indicate the cursor location
 set cursorcolumn " have a column to indicate the cursor location
