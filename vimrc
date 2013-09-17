@@ -17,6 +17,24 @@ if !filereadable(vundle_readme)
     let iCanHazVundle=0
 endif
 
+" Touch untracked config files
+let colourme=1
+let colour_vim=expand('~/.vim/colours.vim')
+if !filereadable(colour_vim)
+    echo "Creating colour file - declare colorscheme in colours.vim"
+    echo ""
+    silent !echo '"colorscheme zenburn' > ~/.vim/colours.vim
+    let colourme=0
+endif
+let foldme=1
+let folds_vim=expand('~/.vim/folds.vim')
+if !filereadable(folds_vim)
+    echo "Creating folds file - declare foldmethod in folds.vim"
+    echo ""
+    silent !echo '"foldmethod=syntax' > ~/.vim/folds.vim
+    let colourme=0
+endif
+
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
