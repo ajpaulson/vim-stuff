@@ -196,7 +196,7 @@ let g:tex_flavor='latex'
 
 
 """" Messages, Info, Status
-set ls=2 " allways show status line
+set ls=2 " Always show status line
 set vb t_vb= " Disable all bells. I hate ringing/flashing.
 set confirm " Y-N-C prompt if closing with unsaved changes.
 set showcmd " Show incomplete normal mode commands as I type.
@@ -204,10 +204,8 @@ set report=0 " : commands always print changed line count.
 set shortmess+=a " Use [+]/[RO]/[w] for modified/readonly/written.
 set ruler " Show some info, even without statuslines.
 set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,5c5V\ %P%) " a ruler on steroids
-set laststatus=2 " Always show statusline, even if only 1 window.
-"set statusline=%<%f\ (%{&ft})%=%-19(%3l,%02c%03V%)%{fugitive#statusline()}
-" displays tabs with :set list & displays when a line runs off-screen
 
+" Easily see tabs, spaces, end of line etc.
 set listchars=tab:>-,eol:¶,trail:≖,precedes:<,extends:>
 set list
 
