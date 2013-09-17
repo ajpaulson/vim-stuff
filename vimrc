@@ -101,13 +101,16 @@ map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
 
+" and lets make these all work in insert mode too ( <C-O> makes next cmd
+" happen as if in command mode )
+imap <c-j> <c-o><c-w>j
+imap <c-k> <c-o><c-w>k
+imap <c-l> <c-o><c-w>l
+imap <c-h> <c-o><c-w>h
+
 " More natural splits
 set splitbelow
 set splitright
-
-" and lets make these all work in insert mode too ( <C-O> makes next cmd
-" happen as if in command mode )
-imap <C-W> <C-O><C-W>
 
 "Spell Check
 map <c-t> :w!<CR>: !aspell check %<CR>: e! %<CR>
