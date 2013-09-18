@@ -337,3 +337,12 @@ nmap <F10> :SCCompileRun<cr>
 nmap <F4> <Plug>Colorizer
 let g:colorizer_startup = 0
 
+"Startify banner
+let g:startify_custom_header = [
+                \ '  ____   ____.__          _________      _____  ',
+                \ '  \   \ /   /|__| _____   \______  \    /  |  | ',
+                \ '   \   Y   / |  |/     \      /    /   /   |  |_',
+                \ '    \     /  |  |  Y Y  \    /    /   /    ^   /',
+                \ '     \___/   |__|__|_|  /   /____/   /\____   | ',
+                \ '                      \/             \/    |__| ',
+                \ ]
