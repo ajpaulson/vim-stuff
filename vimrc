@@ -313,9 +313,6 @@ let g:SuperTabMappingLiteral = '<s-tab>'
 let g:clang_use_library = 1
 let g:clang_library_path='/usr/lib/llvm-3.4/lib'
 
-" Set options for indent lines
-let g:indentLine_char = '|'
-
 " close preview window automatically when we move around
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
