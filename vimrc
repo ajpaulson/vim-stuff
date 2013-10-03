@@ -333,11 +333,20 @@ let g:colorizer_startup = 0
 
 "Startify banner
 let g:startify_custom_header = [
-                \ '  ____   ____.__          _________      _____  ',
-                \ '  \   \ /   /|__| _____   \______  \    /  |  | ',
-                \ '   \   Y   / |  |/     \      /    /   /   |  |_',
-                \ '    \     /  |  |  Y Y  \    /    /   /    ^   /',
-                \ '     \___/   |__|__|_|  /   /____/   /\____   | ',
-                \ '                      \/             \/    |__| ',
-                \ ]
-
+            \ '  .____---^^     ^^---____.                                                      ',
+            \ '  TI      *       *      IT  Three Rings for the Elvin-Kings under the sky.      ',
+            \ '  !I          *          I!  Seven for the DwarfLords in their halls of stone.   ',
+            \ '   X                     X       Nine for the Mortal Men doomed to die.          ',
+            \ '   XL                   JX       One for the Dark Lord on his dark throne.       ',
+            \ '   II        / \        II   In the Land of Mordor where the Shadow Lies.        ',
+            \ '   II   / \ /   \ / \   II                                                       ',
+            \ '    X  /   v     v   \  X       One Ring to rule them all,One Ring to find them, ',
+            \ '    ``/    _     _    \''     One Ring to bring them all and in the Darkness     ',
+            \ '     \\- _-_ -_- _-_ -//         Bind Them                                       ',
+            \ '       \\_-  -_-  -_//          In the Land of Mordor where the Shadows Lie.     ',
+            \ '         ``       ''                                                             ',
+            \ '           ``-_-''                                                               ',
+            \ '                                                    "Lord Of THe Rings"          ',
+            \ '                                                          by J.R.R. Tolkien      ',
+            \ '',
+            \ ]
