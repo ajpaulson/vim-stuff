@@ -78,6 +78,7 @@ Bundle 'jamessan/vim-gnupg'
 Bundle 'mhinz/vim-startify'
 Bundle 'ajpaulson/taboo.vim'
 Bundle 'ajpaulson/usefulstatusline'
+Bundle 'ajpaulson/notes.vim'
 
 """""""""""""""""""""""""""""""""
 "  END BUNDLES / START MAIN RC  "
