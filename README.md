@@ -13,6 +13,8 @@ clang_complete is dependent on libclang
 Install vundle, symlink vimrc to ~/.vimrc and run:
     :BundleInstall
 
+(**NOTE** Vim >7.3 can also source ~/.vim/vimrc making symlink unnecessary)
+
 Add colourscheme declarations to colours.vim
 Add folding declarations to folds.vim
 
