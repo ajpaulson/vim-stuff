@@ -56,10 +56,10 @@ Bundle 'Shougo/vimproc.vim'
 Bundle 'Shougo/unite-outline'
 Bundle 'Shougo/unite-ssh'
 Bundle 'Shougo/vimfiler.vim'
-Bundle 'scrooloose/nerdtree'
+"Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'scrooloose/nerdcommenter'
-Bundle 'jistr/vim-nerdtree-tabs'
+"Bundle 'jistr/vim-nerdtree-tabs'
 Bundle 'vim-scripts/mail.vim'
 Bundle 'vim-scripts/genutils'
 Bundle 'gmarik/github-search.vim'
@@ -173,6 +173,9 @@ set undodir=~/.vim/backups
 set undofile
 " Anonymous register uses system clipboard
 set clipboard=unnamedplus
+
+" Do I need Nerdtree?
+let g:netrw_liststyle = 3
 
 " show a line at column 79
 if exists("&colorcolumn")
@@ -334,6 +337,9 @@ nmap <F10> :SCCompileRun<cr>
 " Colorizer changed all their shit
 nmap <F4> <Plug>Colorizer
 let g:colorizer_startup = 0
+
+let g:startify_files_number = 5
+let g:startify_change_to_vcs_root = 1
 
 "Startify banner
 let g:startify_custom_header = [
