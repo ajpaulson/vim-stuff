@@ -121,6 +121,9 @@ set grepprg=ack-grep " replace the default grep program with ack
 " Set working directory
 nnoremap <leader>. :lcd %:p:h<CR>
 
+" Toggle paste
+set pastetoggle=<leader>p
+
 set complete+=.
 set complete+=k
 set complete+=b
