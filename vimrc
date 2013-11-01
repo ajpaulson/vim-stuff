@@ -56,10 +56,8 @@ Bundle 'Shougo/vimproc.vim'
 Bundle 'Shougo/unite-outline'
 Bundle 'Shougo/unite-ssh'
 Bundle 'Shougo/vimfiler.vim'
-"Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'scrooloose/nerdcommenter'
-"Bundle 'jistr/vim-nerdtree-tabs'
 Bundle 'vim-scripts/mail.vim'
 Bundle 'vim-scripts/genutils'
 Bundle 'gmarik/github-search.vim'
@@ -174,9 +172,6 @@ set undofile
 " Anonymous register uses system clipboard
 set clipboard=unnamedplus
 
-" Do I need Nerdtree?
-let g:netrw_liststyle = 3
-
 " show a line at column 79
 if exists("&colorcolumn")
     set colorcolumn=79
@@ -260,7 +255,7 @@ map <leader>0 :tabnext 0<CR>
 
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
 nnoremap <leader>t :<C-r> Unite -buffer-name=files -start-insert file_rec/async:!<cr>
-nnoremap <leader>f :<C-r> Unite -buffer-name=files -start-insert file<cr>
+"nnoremap <leader>f :<C-r> Unite -buffer-name=files -start-insert file<cr>
 nnoremap <leader>r :<C-r> Unite -buffer-name=mru -start-insert file_mru<cr>
 nnoremap <leader>o :<C-r> Unite -buffer-name=outline -start-insert outline<cr>
 nnoremap <leader>y :<C-r> Unite -buffer-name=yank history/yank<cr>
@@ -296,6 +291,10 @@ let g:unite_source_history_yank_enable = 1
 "  Plugin Configurations  "
 """""""""""""""""""""""""""
 
+"Set vimfiler as default
+let g:vimfiler_as_default_explorer = 1
+nnoremap <leader>f :VimFilerExplorer<CR>
+
 " Load the Gundo window
 map <leader>g :GundoToggle<CR>
 
@@ -304,12 +303,6 @@ nnoremap ,m :w <BAR> !lessc % > %:t:r.css<CR><space>
 
 " keystroke to toggle numbers.vim plugin
 nnoremap <F3> :NumbersToggle<CR>
-
-" Open NerdTree
-map <leader>n :NERDTreeTabsToggle<CR>
-
-" Disable NerdTreeTabs on gvim startup
-let g:nerdtree_tabs_open_on_gui_startup = 0
 
 " SuperTab settings
 let g:SuperTabCrMapping = 0
