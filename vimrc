@@ -100,22 +100,12 @@ map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
 
-map <c-J> <c-w>J
-map <c-K> <c-w>K
-map <c-L> <c-w>L
-map <c-H> <c-w>H
-
 " and lets make these all work in insert mode too ( <C-O> makes next cmd
 " happen as if in command mode )
 imap <c-j> <c-o><c-w>j
 imap <c-k> <c-o><c-w>k
 imap <c-l> <c-o><c-w>l
 imap <c-h> <c-o><c-w>h
-
-imap <c-J> <c-w>J
-imap <c-K> <c-w>K
-imap <c-L> <c-w>L
-imap <c-H> <c-w>H
 
 " More natural splits
 set splitbelow
@@ -307,6 +297,7 @@ let g:unite_source_history_yank_enable = 1
 "Set vimfiler as default
 let g:vimfiler_as_default_explorer = 1
 nnoremap <leader>f :VimFilerExplorer<CR>
+nnoremap <silent><buffer><expr> S vimfiler#do_action('vsplit')
 
 " Load the Gundo window
 map <leader>g :GundoToggle<CR>
