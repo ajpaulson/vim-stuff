@@ -54,10 +54,9 @@ Bundle 'tpope/vim-eunuch'
 Bundle 'Shougo/unite.vim'
 Bundle 'Shougo/vimproc.vim'
 Bundle 'Shougo/unite-outline'
-Bundle 'Shougo/unite-ssh'
-Bundle 'Shougo/vimfiler.vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'scrooloose/nerdcommenter'
+Bundle 'scrooloose/nerdtree'
 Bundle 'vim-scripts/mail.vim'
 Bundle 'vim-scripts/genutils'
 Bundle 'gmarik/github-search.vim'
@@ -294,10 +293,7 @@ let g:unite_source_history_yank_enable = 1
 "  Plugin Configurations  "
 """""""""""""""""""""""""""
 
-"Set vimfiler as default
-let g:vimfiler_as_default_explorer = 1
-nnoremap <leader>f :VimFilerExplorer<CR>
-nnoremap <silent><buffer><expr> S vimfiler#do_action('vsplit')
+map <leader>f :NERDTreeToggle<CR>
 
 " Load the Gundo window
 map <leader>g :GundoToggle<CR>
