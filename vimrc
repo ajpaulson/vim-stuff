@@ -1,7 +1,7 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                             Alex's vimrc                                "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
+"{{{
 set nocompatible        " be iMproved
 filetype off            " required!
 
@@ -37,14 +37,15 @@ endif
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
-
-" let Vundle manage Vundle
-" required!
-Bundle 'gmarik/vundle'
+"}}}
 
 """"""""""""""""""""""
 "  Bundles go here:  "
 """"""""""""""""""""""
+"{{{
+" let Vundle manage Vundle
+" required!
+Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-abolish'
 Bundle 'tpope/vim-fugitive.git'
 Bundle 'tpope/vim-surround.git'
@@ -78,11 +79,12 @@ Bundle 'mhinz/vim-startify'
 Bundle 'ajpaulson/taboo.vim'
 Bundle 'ajpaulson/usefulstatusline'
 Bundle 'ajpaulson/notes.vim'
+"}}}
 
 """""""""""""""""""""""""""""""""
 "  END BUNDLES / START MAIN RC  "
 """""""""""""""""""""""""""""""""
-
+"{{{
 filetype plugin indent on   " required!
 runtime macros/matchit.vim " enable matchit
 
@@ -148,10 +150,12 @@ vnoremap p "_c<Esc>P
 
 map <leader>q :tabclose<cr>
 map gp :tabprevious<cr>
+"}}}
 
-" ==========================================================
-" Basic Settings
-" ==========================================================
+""""""""""""""""""""
+"  Basic Settings  "
+""""""""""""""""""""
+"{{{
 syntax on " syntax highlighing
 filetype plugin indent on " enable loading indent file for filetype
 set number " Display line numbers
@@ -250,11 +254,12 @@ map <leader>7 :tabnext 7<CR>
 map <leader>8 :tabnext 8<CR>
 map <leader>9 :tabnext 9<CR>
 map <leader>0 :tabnext 0<CR>
+"}}}
 
 """""""""""""""""
 "  Unite stuff  "
 """""""""""""""""
-
+"{{{
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
 nnoremap <leader>t :<C-r> Unite -buffer-name=files -start-insert file_rec/async:!<cr>
 "nnoremap <leader>f :<C-r> Unite -buffer-name=files -start-insert file<cr>
@@ -288,11 +293,12 @@ nnoremap <space>/ :Unite grep:.<cr>
       endif
 
 let g:unite_source_history_yank_enable = 1
+"}}}
 
 """""""""""""""""""""""""""
 "  Plugin Configurations  "
 """""""""""""""""""""""""""
-
+"{{{
 map <leader>f :NERDTreeToggle<CR>
 
 " Load the Gundo window
@@ -356,3 +362,5 @@ let g:startify_custom_header = [
             \ '              `      `-;         (-`                             ',
             \ '',
             \ ]
+"}}}
+" vim:ft=vim:fdm=marker
