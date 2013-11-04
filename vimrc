@@ -339,6 +339,9 @@ let g:colorizer_startup = 0
 
 let g:startify_files_number = 5
 let g:startify_change_to_vcs_root = 1
+let g:startify_skiplist = [
+        \ 'COMMIT_EDITMSG'
+        \]
 
 "Startify banner
 let g:startify_custom_header = [
