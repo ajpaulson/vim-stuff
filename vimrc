@@ -304,6 +304,9 @@ map <leader>f :NERDTreeToggle<CR>
 " Load the Gundo window
 map <leader>g :GundoToggle<CR>
 
+" Quick open startify
+map <leader>s :Startify<CR>
+
 " .less to .css, lessc is required
 nnoremap ,m :w <BAR> !lessc % > %:t:r.css<CR><space>
 
