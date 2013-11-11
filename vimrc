@@ -352,7 +352,16 @@ let g:colorizer_startup = 0
 let g:startify_files_number = 5
 let g:startify_change_to_vcs_root = 1
 let g:startify_skiplist = [
-        \ 'COMMIT_EDITMSG'
+        \ '.git/',
+        \ $VIMRUNTIME .'/doc',
+        \ 'bundle/.*/doc',
+        \ '^/tmp',
+        \ '.*history',
+        \ '.*lock',
+        \ '.news_time',
+        \ '.viminfo',
+        \ '.zcompdump*',
+        \ '.*session-errors*',
         \]
 
 "Startify banner
