@@ -343,6 +343,8 @@ nmap <F8> :TagbarToggle<CR>
 nmap <F9> :SCCompile<cr>
 nmap <F10> :SCCompileRun<cr>
 
+nnoremap <leader>/ :Glcd<CR>
+
 " Colorizer changed all their shit
 nmap <F4> <Plug>Colorizer
 let g:colorizer_startup = 0
