@@ -238,6 +238,13 @@ set switchbuf=useopen,usetab
 "Remove trailing whitespace on <leader>S
 nnoremap <leader>S :%s/\s\+$//<cr>:let @/=' '<CR>
 
+" Pane independent search
+augroup last_search
+  autocmd!
+  autocmd WinLeave * let w:last_search = @/
+  autocmd WinEnter * if exists('w:last_search') | let @/ = w:last_search | endif
+augroup END
+
 " Tabline colours
 hi TabLineFill ctermfg=244 ctermbg=236
 hi Tabline ctermfg=244 ctermbg=236
