@@ -32,7 +32,7 @@ if !filereadable(folds_vim)
     echo "Creating folds file - declare foldmethod in folds.vim"
     echo ""
     silent !echo '"foldmethod=syntax' > ~/.vim/folds.vim
-    let colourme=0
+    let foldme=0
 endif
 
 set rtp+=~/.vim/bundle/vundle/
