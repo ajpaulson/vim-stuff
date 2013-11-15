@@ -299,6 +299,9 @@ nnoremap <space>/ :Unite grep:.<cr>
       endif
 
 let g:unite_source_history_yank_enable = 1
+let g:unite_enable_split_vertically=1
+let g:unite_split_rule='botright'
+let g:unite_winwidth=40
 "}}}
 
 """""""""""""""""""""""""""
