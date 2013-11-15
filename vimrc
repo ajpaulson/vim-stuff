@@ -210,7 +210,6 @@ autocmd BufWritePre * set ff=unix
 " Prevent vim from setting filetype to `plaintex`
 let g:tex_flavor='latex'
 
-
 """" Messages, Info, Status
 set ls=2 " Always show status line
 set vb t_vb= " Disable all bells. I hate ringing/flashing.
