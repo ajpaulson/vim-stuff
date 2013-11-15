@@ -180,7 +180,7 @@ set clipboard=unnamed,unnamedplus
 
 " show a line at column 79
 if exists("&colorcolumn")
-    set colorcolumn=79
+    set colorcolumn=80
 endif
 
 """" Moving Around/Editing
