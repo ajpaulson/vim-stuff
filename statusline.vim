@@ -46,7 +46,7 @@ set statusline+=%*
 
 set statusline+=%=      "left/right separator
 
-set statusline+=%#error#
+set statusline+=%#Keyword#
 set statusline+=%{tagbar#currenttag('%s','','f')}
 set statusline+=%*
 
