@@ -77,7 +77,6 @@ Bundle 'lilydjwg/colorizer'
 Bundle 'jamessan/vim-gnupg'
 Bundle 'mhinz/vim-startify'
 Bundle 'ajpaulson/taboo.vim'
-Bundle 'ajpaulson/usefulstatusline'
 Bundle 'ajpaulson/notes.vim'
 "}}}
 
@@ -163,6 +162,7 @@ set backspace=indent,eol,start "Allow Backspace in insert mode"
 set numberwidth=1 " using only 1 column (and 1 space) while possible
 source ~/.vim/colours.vim
 source ~/.vim/folds.vim
+source ~/.vim/statusline.vim
 set title " show title in console title bar
 set wildmenu " Menu completion in command mode on <Tab>
 set wildmode=full " <Tab> cycles between all matching choices.
