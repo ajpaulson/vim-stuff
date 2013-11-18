@@ -267,6 +267,9 @@ map <leader>0 :tabnext 0<CR>
 """""""""""""""""
 "{{{
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
+let g:unite_source_file_rec_max_cache_files = 0
+call unite#custom#source('file_mru,file_rec,file_rec/async,grepocate',
+        \ 'max_candidates', 0)
 nnoremap <leader>t :<C-r> Unite -buffer-name=files -start-insert file_rec/async:!<cr>
 "nnoremap <leader>f :<C-r> Unite -buffer-name=files -start-insert file<cr>
 nnoremap <leader>r :<C-r> Unite -buffer-name=mru -start-insert file_mru<cr>

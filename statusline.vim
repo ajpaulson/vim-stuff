@@ -45,6 +45,11 @@ set statusline+=%{&paste?'[paste]':''}
 set statusline+=%*
 
 set statusline+=%=      "left/right separator
+
+set statusline+=%#error#
+set statusline+=%{tagbar#currenttag('%s','','f')}
+set statusline+=%*
+
 set statusline+=%{StatuslineCurrentHighlight()}\ \ "current highlight
 set statusline+=%c,     "cursor column
 set statusline+=%l/%L   "cursor line/total lines
