@@ -78,6 +78,7 @@ Bundle 'jamessan/vim-gnupg'
 Bundle 'mhinz/vim-startify'
 Bundle 'ajpaulson/taboo.vim'
 Bundle 'ajpaulson/notes.vim'
+Bundle 'molok/vim-smartusline'
 "}}}
 
 """""""""""""""""""""""""""""""""
@@ -311,6 +312,7 @@ let g:unite_winwidth=40
 "  Plugin Configurations  "
 """""""""""""""""""""""""""
 "{{{
+let g:smartusline_string_to_highlight = '[%t]'
 map <leader>f :NERDTreeToggle<CR>
 
 " Load the Gundo window
