@@ -3,3 +3,4 @@ backups/*
 colours.vim
 folds.vim
 after/*
+session/*
