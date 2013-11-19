@@ -2,10 +2,8 @@
 let g:startify_custom_header = [
             \ '               MMM.           .MMM                                ',
             \ '               MMMMMMMMMMMMMMMMMMM                                ',
-            \ '               MMMMMMMMMMMMMMMMMMM                                ',
             \ '              MMMMMMMMMMMMMMMMMMMMM       "Get busy coding,       ',
             \ '             MMMMMMMMMMMMMMMMMMMMMMM       or get busy dying."    ',
-            \ '            MMMMMMMMMMMMMMMMMMMMMMMM                              ',
             \ '            MMMM::- -:::::::- -::MMMM                             ',
             \ '             MM~:~ * ~:::::~ * ~:~MM                              ',
             \ '        .. MMMMM::. .:::+:::. .::MMMMM ..                         ',
@@ -20,5 +18,4 @@ let g:startify_custom_header = [
             \ '             ~~~~MM:~MM~~~MM~:MM~~~~                              ',
             \ '            ~~~~~~==~==~~~==~==~~~~~~                             ',
             \ '             ~~~~~~==~==~==~==~~~~~~                              ',
-            \ '                 :~==~==~==~==~~                                  ',
             \ ]
