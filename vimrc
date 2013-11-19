@@ -361,13 +361,13 @@ let g:startify_change_to_vcs_root = 1
 let g:startify_session_persistence = 0
 let g:startify_change_to_dir = 1
 let g:startify_list_order = [
-        \ ['My Sessions'],
+        \ ['    My Sessions'],
         \ 'sessions',
-        \ ['Recently Edited Here'],
+        \ ['    Recently Edited Here'],
         \ 'dir',
-        \ ['Recently Edited'],
+        \ ['    Recently Edited'],
         \ 'files',
-        \ ['My Bookmarks'],
+        \ ['    My Bookmarks'],
         \ 'bookmarks',
         \ ]
 let g:startify_skiplist = [
