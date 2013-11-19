@@ -383,7 +383,7 @@ let g:startify_skiplist = [
         \ '.*session-errors*',
         \]
 
-source ~/.vim/headers/kraken.vim
+source ~/.vim/headers/watcher.vim
 
 "}}}
 " vim:ft=vim:fdm=marker
