@@ -356,9 +356,11 @@ nnoremap <leader>/ :Glcd<CR>
 nmap <F4> <Plug>Colorizer
 let g:colorizer_startup = 0
 
+"No NERDTree in my sessions
+autocmd VimLeave * NERDTreeClose
 let g:startify_files_number = 5
 let g:startify_change_to_vcs_root = 1
-let g:startify_session_persistence = 0
+let g:startify_session_persistence = 1
 let g:startify_change_to_dir = 1
 let g:startify_list_order = [
         \ ['    My Sessions'],
