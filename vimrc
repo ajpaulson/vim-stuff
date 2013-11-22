@@ -358,7 +358,7 @@ let g:colorizer_startup = 0
 
 "No NERDTree in my sessions
 autocmd VimLeave * NERDTreeClose
-let g:startify_files_number = 5
+let g:startify_files_number = 3
 let g:startify_change_to_vcs_root = 1
 let g:startify_session_persistence = 1
 let g:startify_change_to_dir = 1
