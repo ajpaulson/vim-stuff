@@ -334,6 +334,7 @@ let g:SuperTabMappingLiteral = '<s-tab>'
 
 " Set options for clang complete
 let g:clang_use_library = 1
+let g:clang_library_path='/usr/lib/llvm-3.4/lib'
 
 " close preview window automatically when we move around
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
