@@ -68,6 +68,7 @@ Bundle 'mileszs/ack.vim.git'
 Bundle 'ervandew/supertab.git'
 Bundle 'Rip-Rip/clang_complete.git'
 Bundle 'SirVer/ultisnips'
+Bundle 'honza/vim-snippets'
 Bundle 'majutsushi/tagbar'
 Bundle 'szw/vim-tags'
 Bundle 'myusuf3/numbers.vim'
@@ -332,6 +333,9 @@ nnoremap <F3> :NumbersToggle<CR>
 let g:SuperTabCrMapping = 0
 let g:SuperTabMappingBackward = '<c-tab>' " Free up Shift-Tab
 let g:SuperTabMappingLiteral = '<s-tab>'
+
+" Ultisnips
+let g:UltiSnipsExpandTrigger="<tab>"
 
 " Set options for clang complete
 let g:clang_use_library = 1
