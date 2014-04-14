@@ -4,3 +4,4 @@ colours.vim
 folds.vim
 after/*
 session/*
+.netrwhist
