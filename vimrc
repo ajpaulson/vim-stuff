@@ -249,9 +249,9 @@ augroup last_search
 augroup END
 
 " Tabline colours
-hi TabLineFill ctermfg=244 ctermbg=236
-hi Tabline ctermfg=244 ctermbg=236
-hi TablineSel ctermfg=22 ctermbg=148
+hi TabLineFill ctermfg=23 ctermbg=231
+hi Tabline ctermfg=231 ctermbg=238
+hi TablineSel ctermfg=22 ctermbg=149
 
 " Tab navigation in with alt-#
 map <leader>1 :tabnext 1<CR>
