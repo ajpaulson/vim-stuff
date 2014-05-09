@@ -36,7 +36,7 @@ if !filereadable(folds_vim)
 endif
 
 set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+call vundle#begin()
 "}}}
 
 """"""""""""""""""""""
@@ -78,6 +78,7 @@ Plugin 'mhinz/vim-startify'
 Plugin 'git@gitlab.com:ajpaulson/taboo-vim'
 Plugin 'git@gitlab.com:ajpaulson/notes-vim'
 Plugin 'molok/vim-smartusline'
+call vundle#end()
 "}}}
 
 """""""""""""""""""""""""""""""""
