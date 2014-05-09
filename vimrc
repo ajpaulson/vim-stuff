@@ -199,6 +199,9 @@ set autoindent " always set autoindenting on
 set shiftround " rounds indent to a multiple of shiftwidth
 set matchpairs+=<:> " show matching <> (html mainly) as well
 set encoding=utf-8
+set expandtab " use spaces instead of tabs
+set smarttab " be smart about tabs
+set smartindent " be smart about indenting
 
 """" Reading/Writing
 set noautowrite " Never write a file unless I request it.
