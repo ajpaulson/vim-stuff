@@ -250,8 +250,8 @@ augroup END
 
 " Tabline colours
 hi TabLineFill ctermfg=23 ctermbg=231
-hi Tabline ctermfg=231 ctermbg=238
-hi TablineSel ctermfg=22 ctermbg=149
+hi Tabline cterm=NONE ctermfg=231 ctermbg=23
+hi TablineSel cterm=NONE ctermfg=0 ctermbg=149
 
 " Tab navigation in with alt-#
 map <leader>1 :tabnext 1<CR>
