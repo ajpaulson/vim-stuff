@@ -58,7 +58,6 @@ Plugin 'Shougo/vimproc.vim'
 Plugin 'Shougo/unite-outline'
 Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/nerdtree'
 Plugin 'sjl/gundo.vim.git'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'mileszs/ack.vim.git'
@@ -314,7 +313,6 @@ let g:unite_winwidth=40
 """""""""""""""""""""""""""
 "{{{
 let g:smartusline_string_to_highlight = '[%t]'
-map <leader>f :NERDTreeToggle<CR>
 
 " Load the Gundo window
 map <leader>g :GundoToggle<CR>
@@ -360,8 +358,6 @@ nnoremap <leader>/ :Glcd<CR>
 nmap <F4> <Plug>Colorizer
 let g:colorizer_startup = 0
 
-"No NERDTree in my sessions
-autocmd VimLeave * NERDTreeClose
 let g:startify_files_number = 3
 let g:startify_change_to_vcs_root = 1
 let g:startify_session_persistence = 1
