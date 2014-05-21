@@ -162,6 +162,7 @@ set numberwidth=1 " using only 1 column (and 1 space) while possible
 source ~/.vim/colours.vim
 source ~/.vim/folds.vim
 source ~/.vim/statusline.vim
+source ~/.vim/ScratchEdit.vim
 set title " show title in console title bar
 set wildmenu " Menu completion in command mode on <Tab>
 set wildmode=full " <Tab> cycles between all matching choices.
