@@ -1,6 +1,6 @@
 function! ScratchEdit(cmd, options)
     exe a:cmd tempname()
-    setl buftype=nofile bufhidden=wipe nobuflisted
+    setl buftype=nofile bufhidden=hide buflisted noswapfile
     if !empty(a:options) | exe 'setl' a:options | endif
 endfunction
 
