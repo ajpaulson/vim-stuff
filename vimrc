@@ -339,6 +339,12 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:clang_use_library = 1
 let g:clang_library_path='/usr/lib/llvm-3.4/lib'
 
+" Syntastic rules
+let g:syntastic_c_checkers = [ 'clang' ]
+let g:syntastic_c_check_header = 1
+let g:syntastic_c_no_default_include_dirs = 1
+let g:syntastic_c_compiler = 'clang'
+
 " close preview window automatically when we move around
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
