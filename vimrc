@@ -246,14 +246,20 @@ augroup last_search
   autocmd WinEnter * if exists('w:last_search') | let @/ = w:last_search | endif
 augroup END
 
-" Some better C++ settings to override sleuth
-augroup ft_c
-  autocmd!
-  autocmd FileType cpp setlocal noexpandtab
-  autocmd FileType cpp setlocal tabstop=4
-  autocmd FileType cpp setlocal softtabstop=4
-  autocmd FileType cpp setlocal shiftwidth=4
+" LLVM C/C++ settings
+augroup csrc
+  au!
+  autocmd FileType *      set nocindent smartindent
+  autocmd FileType c,cpp  set cindent
+  autocmd FileType c,cpp  setlocal softtabstop=2
+  autocmd FileType c,cpp  setlocal shiftwidth=2
+  autocmd FileType c,cpp  setlocal expandtab
 augroup END
+
+" Set a few indentation parameters.
+set cinoptions=:0,g0,(0,Ws,l1
+" Add and delete spaces in increments of 'shiftwidth' for tabs
+set smarttab
 
 " Tabline colours
 hi TabLineFill ctermfg=23 ctermbg=231
