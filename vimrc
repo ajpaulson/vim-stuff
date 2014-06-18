@@ -195,11 +195,10 @@ set matchtime=2 " (for only .2 seconds).
 set nowrap " don't wrap text
 set linebreak " don't wrap textin the middle of a word
 set autoindent " always set autoindenting on
-set shiftround " rounds indent to a multiple of shiftwidth
+" set shiftround " rounds indent to a multiple of shiftwidth
 set matchpairs+=<:> " show matching <> (html mainly) as well
 set encoding=utf-8
-set expandtab " use spaces instead of tabs
-set smarttab " be smart about tabs
+" set smarttab " be smart about tabs
 set smartindent " be smart about indenting
 
 """" Reading/Writing
