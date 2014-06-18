@@ -246,6 +246,15 @@ augroup last_search
   autocmd WinEnter * if exists('w:last_search') | let @/ = w:last_search | endif
 augroup END
 
+" Some better C++ settings to override sleuth
+augroup ft_c
+  autocmd!
+  autocmd FileType cpp setlocal noexpandtab
+  autocmd FileType cpp setlocal tabstop=4
+  autocmd FileType cpp setlocal softtabstop=4
+  autocmd FileType cpp setlocal shiftwidth=4
+augroup END
+
 " Tabline colours
 hi TabLineFill ctermfg=23 ctermbg=231
 hi Tabline cterm=NONE ctermfg=231 ctermbg=23
