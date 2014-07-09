@@ -289,6 +289,7 @@ nnoremap <leader>f :<C-r> Unite -buffer-name=files -start-insert file<cr>
 nnoremap <leader>o :<C-r> Unite -buffer-name=outline -start-insert outline<cr>
 nnoremap <leader>y :<C-r> Unite -buffer-name=yank history/yank<cr>
 nnoremap <leader>b :<C-r> Unite -buffer-name=buffer -start-insert buffer<cr>
+nnoremap <leader>r :<C-r> Unite -buffer-name=register register<cr>
 
 " Custom mappings for the unite buffer
 autocmd FileType unite call s:unite_settings()
