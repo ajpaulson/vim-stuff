@@ -91,7 +91,7 @@ let mapleader="," " change the leader to be a comma vs slash
 
 " ,v brings up my .vimrc
 " ,V reloads it -- making all changes active (have to save first)
-map <leader>v :sp ~/.vim/vimrc<CR><C-W>_
+map <leader>v :tabe ~/.vim/vimrc<CR><C-W>_
 map <silent> <leader>V :source ~/.vim/vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 
 " ctrl-jklm changes to that split
