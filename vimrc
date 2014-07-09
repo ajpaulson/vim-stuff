@@ -135,11 +135,7 @@ set complete+=u
 " don't select first item, follow typing in autocomplete
 set completeopt=menuone,longest,preview
 set pumheight=6 " Keep a small completion window
-au FileType python set omnifunc=pythoncomplete#Complete
-inoremap <expr> <cr> pumvisible() ? "\<c-y>" : "\<c-g>u\<cr>"
-" Use tab to scroll through autocomplete menus
-inoremap <expr> <tab> pumvisible() ? "\<c-n>" : "\<tab>"
-inoremap <expr> <s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
+set omnifunc=pythoncomplete#Complete
 
 " Improve register use
 " Don't update default register when deleting single characters
@@ -346,6 +342,9 @@ nnoremap <F3> :NumbersToggle<CR>
 let g:SuperTabCrMapping = 0
 let g:SuperTabMappingBackward = '<c-tab>' " Free up Shift-Tab
 let g:SuperTabMappingLiteral = '<s-tab>'
+let g:SuperTabLongestHighligth = 1
+" See how context aware completion type works
+let g:SuperTabSetDefaultCompletionType = 'context'
 
 " Ultisnips
 let g:UltiSnipsExpandTrigger="<tab>"
