@@ -43,6 +43,7 @@ call vundle#begin()
 "  Bundles go here:  "
 """"""""""""""""""""""
 "{{{
+let g:vundle_default_git_proto = 'git'
 " let Vundle manage Vundle
 " required!
 Plugin 'gmarik/vundle'
