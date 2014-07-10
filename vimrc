@@ -135,7 +135,7 @@ set complete+=u
 " don't select first item, follow typing in autocomplete
 set completeopt=menuone,longest,preview
 set pumheight=6 " Keep a small completion window
-set omnifunc=pythoncomplete#Complete
+set omnifunc=syntaxcomplete#Complete
 
 " Improve register use
 " Don't update default register when deleting single characters
