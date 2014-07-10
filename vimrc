@@ -13,7 +13,7 @@ if !filereadable(vundle_readme)
     echo "Installing Vundle..."
     echo ""
     silent !mkdir -p ~/.vim/bundle
-    silent !git clone git@github.com:gmarik/vundle ~/.vim/bundle/vundle
+    silent !git clone git://github.com/gmarik/vundle ~/.vim/bundle/vundle
     let iCanHazVundle=0
 endif
 
@@ -121,9 +121,6 @@ set grepprg=ack-grep " replace the default grep program with ack
 " Set working directory
 nnoremap <leader>. :lcd %:p:h<CR>
 
-" Toggle paste
-" set pastetoggle=<C-P>
-
 set complete+=.
 set complete+=k
 set complete+=b
@@ -195,7 +192,6 @@ set autoindent " always set autoindenting on
 " set shiftround " rounds indent to a multiple of shiftwidth
 set matchpairs+=<:> " show matching <> (html mainly) as well
 set encoding=utf-8
-" set smarttab " be smart about tabs
 set smartindent " be smart about indenting
 
 """" Reading/Writing
@@ -352,7 +348,7 @@ let g:UltiSnipsExpandTrigger="<tab>"
 
 " Set options for clang complete
 let g:clang_use_library = 1
-let g:clang_library_path='/usr/lib/llvm-3.4/lib'
+"let g:clang_library_path='/usr/lib/llvm-3.4/lib'
 
 " Syntastic rules
 let g:syntastic_c_checkers = [ 'clang' ]
