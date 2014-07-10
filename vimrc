@@ -13,7 +13,7 @@ if !filereadable(vundle_readme)
     echo "Installing Vundle..."
     echo ""
     silent !mkdir -p ~/.vim/bundle
-    silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
+    silent !git clone git@github.com:gmarik/vundle ~/.vim/bundle/vundle
     let iCanHazVundle=0
 endif
 
@@ -43,15 +43,16 @@ call vundle#begin()
 "  Bundles go here:  "
 """"""""""""""""""""""
 "{{{
+let g:vundle_default_git_proto = 'git'
 " let Vundle manage Vundle
 " required!
 Plugin 'gmarik/vundle'
-Plugin 'tpope/vim-abolish'
+" Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-fugitive.git'
 Plugin 'tpope/vim-surround.git'
 Plugin 'tpope/vim-sleuth'
 Plugin 'tpope/vim-unimpaired'
-Plugin 'tpope/vim-eunuch'
+" Plugin 'tpope/vim-eunuch'
 Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-commentary'
 Plugin 'Shougo/unite.vim'
@@ -61,8 +62,8 @@ Plugin 'Shougo/vimshell.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'sjl/gundo.vim.git'
 Plugin 'sheerun/vim-polyglot'
-Plugin 'mileszs/ack.vim.git'
-Plugin 'ervandew/supertab.git'
+" Plugin 'mileszs/ack.vim.git'
+ Plugin 'ervandew/supertab.git'
 Plugin 'Rip-Rip/clang_complete.git'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
@@ -90,7 +91,7 @@ let mapleader="," " change the leader to be a comma vs slash
 
 " ,v brings up my .vimrc
 " ,V reloads it -- making all changes active (have to save first)
-map <leader>v :sp ~/.vim/vimrc<CR><C-W>_
+map <leader>v :tabe ~/.vim/vimrc<CR><C-W>_
 map <silent> <leader>V :source ~/.vim/vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 
 " ctrl-jklm changes to that split
@@ -134,11 +135,7 @@ set complete+=u
 " don't select first item, follow typing in autocomplete
 set completeopt=menuone,longest,preview
 set pumheight=6 " Keep a small completion window
-au FileType python set omnifunc=pythoncomplete#Complete
-inoremap <expr> <cr> pumvisible() ? "\<c-y>" : "\<c-g>u\<cr>"
-" Use tab to scroll through autocomplete menus
-inoremap <expr> <tab> pumvisible() ? "\<c-n>" : "\<tab>"
-inoremap <expr> <s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
+set omnifunc=syntaxcomplete#Complete
 
 " Improve register use
 " Don't update default register when deleting single characters
@@ -292,6 +289,7 @@ nnoremap <leader>f :<C-r> Unite -buffer-name=files -start-insert file<cr>
 nnoremap <leader>o :<C-r> Unite -buffer-name=outline -start-insert outline<cr>
 nnoremap <leader>y :<C-r> Unite -buffer-name=yank history/yank<cr>
 nnoremap <leader>b :<C-r> Unite -buffer-name=buffer -start-insert buffer<cr>
+nnoremap <leader>r :<C-r> Unite -buffer-name=register register<cr>
 
 " Custom mappings for the unite buffer
 autocmd FileType unite call s:unite_settings()
@@ -345,6 +343,9 @@ nnoremap <F3> :NumbersToggle<CR>
 let g:SuperTabCrMapping = 0
 let g:SuperTabMappingBackward = '<c-tab>' " Free up Shift-Tab
 let g:SuperTabMappingLiteral = '<s-tab>'
+let g:SuperTabLongestHighligth = 1
+" See how context aware completion type works
+let g:SuperTabSetDefaultCompletionType = 'context'
 
 " Ultisnips
 let g:UltiSnipsExpandTrigger="<tab>"
