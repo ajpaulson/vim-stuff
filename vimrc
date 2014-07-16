@@ -295,7 +295,9 @@ let g:SuperTabSetDefaultCompletionType = 'context'
 
 " Set options for clang complete
 let g:clang_use_library = 1
-let g:clang_library_path='/usr/lib/llvm-3.4/lib'
+if filereadable('/usr/lib/llvm-3.4/lib')
+  let g:clang_library_path='/usr/lib/llvm-3.4/lib'
+endif
 
 " Syntastic rules
 let g:syntastic_c_checkers = [ 'clang' ]
