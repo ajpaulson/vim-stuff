@@ -47,7 +47,6 @@ let g:vundle_default_git_proto = 'git'
 " let Vundle manage Vundle
 " required!
 Plugin 'gmarik/vundle'
-" Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-fugitive.git'
 Plugin 'tpope/vim-surround.git'
 Plugin 'tpope/vim-sleuth'
@@ -55,17 +54,13 @@ Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-eunuch'
 Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-commentary'
-Plugin 'Shougo/unite.vim'
-Plugin 'Shougo/vimproc.vim'
-Plugin 'Shougo/unite-outline'
-Plugin 'Shougo/vimshell.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'sjl/gundo.vim.git'
 Plugin 'sheerun/vim-polyglot'
-" Plugin 'mileszs/ack.vim.git'
- Plugin 'ervandew/supertab.git'
+Plugin 'ervandew/supertab.git'
 Plugin 'Rip-Rip/clang_complete.git'
-Plugin 'SirVer/ultisnips'
+Plugin 'Shougo/neocomplete'
+Plugin 'Shougo/neosnippet'
 Plugin 'honza/vim-snippets'
 Plugin 'majutsushi/tagbar'
 Plugin 'szw/vim-tags'
@@ -272,51 +267,6 @@ map <leader>9 :tabnext 9<CR>
 map <leader>0 :tabnext 0<CR>
 "}}}
 
-"""""""""""""""""
-"  Unite stuff  "
-"""""""""""""""""
-"{{{
-call unite#filters#matcher_default#use(['matcher_fuzzy'])
-let g:unite_source_file_rec_max_cache_files = 0
-call unite#custom#source('file_rec,file_rec/async,grepocate',
-        \ 'max_candidates', 0)
-nnoremap <leader>t :<C-r> Unite -buffer-name=files -start-insert file_rec/async:!<cr>
-nnoremap <leader>f :<C-r> Unite -buffer-name=files -start-insert file<cr>
-nnoremap <leader>o :<C-r> Unite -buffer-name=outline -start-insert outline<cr>
-nnoremap <leader>y :<C-r> Unite -buffer-name=yank history/yank<cr>
-nnoremap <leader>b :<C-r> Unite -buffer-name=buffer -start-insert buffer<cr>
-nnoremap <leader>r :<C-r> Unite -buffer-name=register register<cr>
-
-" Custom mappings for the unite buffer
-autocmd FileType unite call s:unite_settings()
-function! s:unite_settings()
-    " Play nice with supertab
-    let b:SuperTabDisabled=1
-    " Enable navigation with Ctrl-j and Ctrl-k in insert mode
-    imap <buffer> <C-j> <Plug>(unite_select_next_line)
-    imap <buffer> <C-k> <Plug>(unite_select_previous_line)
-endfunction
-
-" Space / does some grepping
-nnoremap <space>/ :Unite grep:.<cr>
-
-" use either silver-surfer or ack-grep for Unite Grep
-      if executable('ag')
-        let g:unite_source_grep_command='ag'
-        let g:unite_source_grep_default_opts='--nocolor --nogroup --hidden'
-        let g:unite_source_grep_recursive_opt=''
-      elseif executable('ack')
-        let g:unite_source_grep_command='ack'
-        let g:unite_source_grep_default_opts='--no-heading --no-color -a'
-        let g:unite_source_grep_recursive_opt=''
-      endif
-
-let g:unite_source_history_yank_enable = 1
-let g:unite_enable_split_vertically=1
-let g:unite_split_rule='botright'
-let g:unite_winwidth=40
-"}}}
-
 """""""""""""""""""""""""""
 "  Plugin Configurations  "
 """""""""""""""""""""""""""
@@ -343,9 +293,6 @@ let g:SuperTabLongestHighligth = 1
 " See how context aware completion type works
 let g:SuperTabSetDefaultCompletionType = 'context'
 
-" Ultisnips
-let g:UltiSnipsExpandTrigger="<tab>"
-
 " Set options for clang complete
 let g:clang_use_library = 1
 let g:clang_library_path='/usr/lib/llvm-3.4/lib'
@@ -355,6 +302,34 @@ let g:syntastic_c_checkers = [ 'clang' ]
 let g:syntastic_c_check_header = 1
 let g:syntastic_c_no_default_include_dirs = 1
 let g:syntastic_c_compiler = 'clang'
+
+" NeoComplete and NeoSnippets
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
+let g:neocomplete#sources#syntax#min_keyword_length = 2
+let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+inoremap <expr><C-g>    neocomplete#undo_completion()
+inoremap <expr><C-l>    neocomplete#complete_common_string()
+" Tab completion
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" Neosnippet mappings
+imap <C-k>    <Plug>(neosnippet_expand_or_jump)
+smap <C-k>    <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>    <Plug>(neosnippet_expand_target)
+" SuperTab like snippets behaviour
+imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+      \ "\<Plug>(neosnippet_expand_or_jump)"
+      \: pumvisible() ? "\<C-n>" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+      \ "\<Plug>(neosnippet_expand_or_jump)"
+      \: "\<TAB>"
+" For snippet_complete marker
+if has('conceal')
+  set conceallevel=2 concealcursor=i
+endif
+" Use Honza's snippets
+let g:neosnippet#enable_snipmate_compatibility = 1
+let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
 
 " close preview window automatically when we move around
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
