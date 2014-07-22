@@ -354,6 +354,8 @@ nnoremap <leader>/ :Glcd<CR>
 nmap <F4> <Plug>Colorizer
 let g:colorizer_startup = 0
 
+" Hack to disable colorcolumn for startify
+autocmd FileType startify setlocal colorcolumn&
 let g:startify_files_number = 3
 let g:startify_change_to_vcs_root = 1
 let g:startify_session_persistence = 1
