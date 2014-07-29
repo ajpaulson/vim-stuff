@@ -234,15 +234,15 @@ augroup last_search
   autocmd WinEnter * if exists('w:last_search') | let @/ = w:last_search | endif
 augroup END
 
-" LLVM C/C++ settings
-augroup csrc
-  au!
-  autocmd FileType *      set nocindent smartindent
-  autocmd FileType c,cpp  set cindent
-  autocmd FileType c,cpp  setlocal softtabstop=2
-  autocmd FileType c,cpp  setlocal shiftwidth=2
-  autocmd FileType c,cpp  setlocal expandtab
-augroup END
+" " LLVM C/C++ settings
+" augroup csrc
+"   au!
+"   autocmd FileType *      set nocindent smartindent
+"   autocmd FileType c,cpp  set cindent
+"   autocmd FileType c,cpp  setlocal softtabstop=2
+"   autocmd FileType c,cpp  setlocal shiftwidth=2
+"   autocmd FileType c,cpp  setlocal expandtab
+" augroup END
 
 " Set a few indentation parameters.
 set cinoptions=:0,g0,(0,Ws,l1
@@ -333,6 +333,21 @@ endif
 let g:neosnippet#enable_snipmate_compatibility = 1
 let g:neosnippet#disable_runtime_snippets = { '-' : 1, }
 let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
+
+if !exists('g:neocomplete#force_omni_input_patterns')
+  let g:neocomplete#force_omni_input_patterns = {}
+endif
+let g:neocomplete#force_overwrite_completefunc = 1
+let g:neocomplete#force_omni_input_patterns.c =
+      \ '[^.[:digit:] *\t]\%(\.\|->\)\w*'
+let g:neocomplete#force_omni_input_patterns.cpp =
+      \ '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
+let g:neocomplete#force_omni_input_patterns.objc =
+      \ '\[\h\w*\s\h\?\|\h\w*\%(\.\|->\)'
+let g:neocomplete#force_omni_input_patterns.objcpp =
+      \ '\[\h\w*\s\h\?\|\h\w*\%(\.\|->\)\|\h\w*::\w*'
+let g:clang_complete_auto = 0
+let g:clang_auto_select = 0
 
 " close preview window automatically when we move around
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
