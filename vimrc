@@ -70,8 +70,8 @@ Plugin 'Pychimp/vim-luna'
 Plugin 'xuhdev/SingleCompile'
 Plugin 'lilydjwg/colorizer'
 Plugin 'mhinz/vim-startify'
-Plugin 'git@gitlab.com:ajpaulson/taboo-vim'
-Plugin 'git@gitlab.com:ajpaulson/notes-vim'
+Plugin 'ajpaulson/taboo.vim'
+Plugin 'ajpaulson/notes.vim'
 Plugin 'molok/vim-smartusline'
 call vundle#end()
 "}}}
