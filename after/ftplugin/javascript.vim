@@ -1,1 +1,2 @@
-setlocal formatoptions-=cro
+" setlocal formatoptions-=cro
+setlocal comments-=:// comments+=f://
