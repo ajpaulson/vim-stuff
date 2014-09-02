@@ -23,7 +23,7 @@ let colour_vim=expand('~/.vim/colours.vim')
 if !filereadable(colour_vim)
     echo "Creating colour file - declare colorscheme in colours.vim"
     echo ""
-    silent !echo '"colorscheme zenburn' > ~/.vim/colours.vim
+    silent !echo 'colorscheme luna-term' > ~/.vim/colours.vim
     let colourme=0
 endif
 let foldme=1
@@ -49,10 +49,8 @@ let g:vundle_default_git_proto = 'git'
 Plugin 'gmarik/vundle'
 Plugin 'tpope/vim-fugitive.git'
 Plugin 'tpope/vim-surround.git'
-" Plugin 'tpope/vim-sleuth'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-eunuch'
-Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-repeat'
 Plugin 'scrooloose/syntastic'
@@ -67,7 +65,6 @@ Plugin 'majutsushi/tagbar'
 Plugin 'szw/vim-tags'
 Plugin 'myusuf3/numbers.vim'
 Plugin 'Pychimp/vim-luna'
-Plugin 'xuhdev/SingleCompile'
 Plugin 'lilydjwg/colorizer'
 Plugin 'mhinz/vim-startify'
 Plugin 'ajpaulson/taboo.vim'
@@ -168,7 +165,7 @@ set undofile
 " Anonymous register uses system clipboard
 set clipboard=unnamed,unnamedplus
 
-" show a line at column 79
+" show a line at column 80
 if exists("&colorcolumn")
     set colorcolumn=80
 endif
@@ -185,7 +182,6 @@ set matchtime=2 " (for only .2 seconds).
 set nowrap " don't wrap text
 set linebreak " don't wrap textin the middle of a word
 set autoindent " always set autoindenting on
-" set shiftround " rounds indent to a multiple of shiftwidth
 set matchpairs+=<:> " show matching <> (html mainly) as well
 set encoding=utf-8
 set smartindent " be smart about indenting
@@ -234,16 +230,6 @@ augroup last_search
   autocmd WinLeave * let w:last_search = @/
   autocmd WinEnter * if exists('w:last_search') | let @/ = w:last_search | endif
 augroup END
-
-" " LLVM C/C++ settings
-" augroup csrc
-"   au!
-"   autocmd FileType *      set nocindent smartindent
-"   autocmd FileType c,cpp  set cindent
-"   autocmd FileType c,cpp  setlocal softtabstop=2
-"   autocmd FileType c,cpp  setlocal shiftwidth=2
-"   autocmd FileType c,cpp  setlocal expandtab
-" augroup END
 
 " Set a few indentation parameters.
 set cinoptions=:0,g0,(0,Ws,l1
