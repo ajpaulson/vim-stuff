@@ -297,6 +297,7 @@ let g:syntastic_c_compiler = 'clang'
 " NeoComplete and NeoSnippets
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
+let g:neocomplete#enable_omni_fallback = 1
 let g:neocomplete#sources#syntax#min_keyword_length = 2
 let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 inoremap <expr><C-g>    neocomplete#undo_completion()
