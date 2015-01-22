@@ -157,7 +157,7 @@ set t_Co=256
 " Turn off swap files
 set noswapfile
 set nobackup
-set nowb
+set nowb "no writebackup
 "keep undo history across sessions by storing in file
 let s:vim_cache = expand('$HOME/.vim/backups')
 if filewritable(s:vim_cache) == 0 && exists("*mkdir")
