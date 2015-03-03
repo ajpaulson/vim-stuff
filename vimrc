@@ -352,10 +352,7 @@ let g:taboo_renamed_tab_format = "%N[%f]%m"
 " Map TagBar toggle to F8
 nmap <F8> :TagbarToggle<CR>
 
-" SingleCompile mappings
-nmap <F9> :SCCompile<cr>
-nmap <F10> :SCCompileRun<cr>
-
+" Fugitive - go to repo root
 nnoremap <leader>/ :Glcd<CR>
 
 " Colorizer changed all their shit
