@@ -162,7 +162,6 @@ let s:vim_cache = expand('$HOME/.vim/backups')
 if filewritable(s:vim_cache) == 0 && exists("*mkdir")
 	call mkdir(s:vim_cache, "p", 0700)
 endif
-" silent !mkdir ~/.vim/backups > /dev/null 2>&1
 set undodir=~/.vim/backups
 set undofile
 " Anonymous register uses system clipboard
