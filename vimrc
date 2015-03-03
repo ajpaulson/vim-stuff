@@ -142,7 +142,6 @@ map gp :tabprevious<cr>
 """"""""""""""""""""
 "{{{
 syntax on " syntax highlighing
-filetype plugin indent on " enable loading indent file for filetype
 set number " Display line numbers
 set backspace=indent,eol,start "Allow Backspace in insert mode"
 set numberwidth=1 " using only 1 column (and 1 space) while possible
@@ -202,7 +201,7 @@ autocmd BufWritePre * set ff=unix
 let g:tex_flavor='latex'
 
 """" Messages, Info, Status
-set ls=2 " Always show status line
+set ls=2 " Always show status line ('laststatus')
 set vb t_vb= " Disable all bells. I hate ringing/flashing.
 set confirm " Y-N-C prompt if closing with unsaved changes.
 set showcmd " Show incomplete normal mode commands as I type.
