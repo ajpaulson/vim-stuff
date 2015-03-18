@@ -104,8 +104,8 @@ imap <c-h> <c-o><c-w>h
 set splitbelow
 set splitright
 
-"Spell Check
-map <c-t> :w!<CR>: !aspell check %<CR>: e! %<CR>
+"Spell Check (f for fuckup)
+map <silent> <leader>f :set spell!<CR>
 
 " Ignore these files when completing
 set wildignore+=*.o,*.obj,.git,*.pyc
