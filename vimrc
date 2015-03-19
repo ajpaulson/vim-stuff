@@ -67,7 +67,6 @@ Plugin 'myusuf3/numbers.vim'
 Plugin 'Pychimp/vim-luna'
 Plugin 'lilydjwg/colorizer'
 Plugin 'mhinz/vim-startify'
-Plugin 'ajpaulson/taboo.vim'
 Plugin 'ajpaulson/notes.vim'
 Plugin 'molok/vim-smartusline'
 call vundle#end()
