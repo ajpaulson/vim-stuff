@@ -5,16 +5,12 @@
 set nocompatible        " be iMproved
 filetype off            " required!
 
-" Setting up Vundle - the vim plugin bundler
-" shamelessly nicke from github.com/fisadev
-let iCanHazVundle=1
-let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
-if !filereadable(vundle_readme)
-	echo "Installing Vundle..."
-	echo ""
-	silent !mkdir -p ~/.vim/bundle
-	silent !git clone git://github.com/gmarik/vundle ~/.vim/bundle/vundle
-	let iCanHazVundle=0
+" Set up vim-plug
+let s:vim_plugger = expand('$HOME/.vim/autoload/plug.vim')
+if filewritable(s:vim_plugger) == 0
+	!curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+		\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	autocmd VimEnter * PlugInstall
 endif
 
 " Touch untracked config files
@@ -34,42 +30,35 @@ if !filereadable(folds_vim)
 	silent !echo '"foldmethod=syntax' > ~/.vim/folds.vim
 	let foldme=0
 endif
-
-set rtp+=~/.vim/bundle/vundle/
-call vundle#begin()
 "}}}
 
 """"""""""""""""""""""
 "  Bundles go here:  "
 """"""""""""""""""""""
 "{{{
-let g:vundle_default_git_proto = 'git'
-" let Vundle manage Vundle
-" required!
-Plugin 'gmarik/vundle'
-Plugin 'tpope/vim-fugitive.git'
-Plugin 'tpope/vim-surround.git'
-Plugin 'tpope/vim-unimpaired'
-Plugin 'tpope/vim-eunuch'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-repeat'
-Plugin 'scrooloose/syntastic'
-Plugin 'sjl/gundo.vim.git'
-Plugin 'sheerun/vim-polyglot'
-Plugin 'ervandew/supertab.git'
-Plugin 'Rip-Rip/clang_complete.git'
-Plugin 'Shougo/neocomplete'
-Plugin 'Shougo/neosnippet'
-Plugin 'honza/vim-snippets'
-Plugin 'majutsushi/tagbar'
-Plugin 'szw/vim-tags'
-Plugin 'myusuf3/numbers.vim'
-Plugin 'Pychimp/vim-luna'
-Plugin 'lilydjwg/colorizer'
-Plugin 'mhinz/vim-startify'
-Plugin 'ajpaulson/notes.vim'
-Plugin 'molok/vim-smartusline'
-call vundle#end()
+call plug#begin('~/.vim/plugged')
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-repeat'
+Plug 'scrooloose/syntastic'
+Plug 'sheerun/vim-polyglot'
+Plug 'ervandew/supertab'
+Plug 'Rip-Rip/clang_complete'
+Plug 'Shougo/neocomplete'
+Plug 'Shougo/neosnippet'
+Plug 'honza/vim-snippets'
+Plug 'majutsushi/tagbar'
+Plug 'szw/vim-tags'
+Plug 'myusuf3/numbers.vim'
+Plug 'Pychimp/vim-luna'
+Plug 'lilydjwg/colorizer'
+Plug 'mhinz/vim-startify'
+Plug 'ajpaulson/notes.vim'
+Plug 'molok/vim-smartusline'
+call plug#end()
 "}}}
 
 """""""""""""""""""""""""""""""""

@@ -1,6 +1,7 @@
-bundle/*
+.netrwhist
+autoload/*
 backups/*
 colours.vim
 folds.vim
+plugged/*
 session/*
-.netrwhist
