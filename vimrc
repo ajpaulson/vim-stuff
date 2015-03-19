@@ -10,29 +10,29 @@ filetype off            " required!
 let iCanHazVundle=1
 let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
 if !filereadable(vundle_readme)
-    echo "Installing Vundle..."
-    echo ""
-    silent !mkdir -p ~/.vim/bundle
-    silent !git clone git://github.com/gmarik/vundle ~/.vim/bundle/vundle
-    let iCanHazVundle=0
+	echo "Installing Vundle..."
+	echo ""
+	silent !mkdir -p ~/.vim/bundle
+	silent !git clone git://github.com/gmarik/vundle ~/.vim/bundle/vundle
+	let iCanHazVundle=0
 endif
 
 " Touch untracked config files
 let colourme=1
 let colour_vim=expand('~/.vim/colours.vim')
 if !filereadable(colour_vim)
-    echo "Creating colour file - declare colorscheme in colours.vim"
-    echo ""
-    silent !echo 'colorscheme luna-term' > ~/.vim/colours.vim
-    let colourme=0
+	echo "Creating colour file - declare colorscheme in colours.vim"
+	echo ""
+	silent !echo 'colorscheme luna-term' > ~/.vim/colours.vim
+	let colourme=0
 endif
 let foldme=1
 let folds_vim=expand('~/.vim/folds.vim')
 if !filereadable(folds_vim)
-    echo "Creating folds file - declare foldmethod in folds.vim"
-    echo ""
-    silent !echo '"foldmethod=syntax' > ~/.vim/folds.vim
-    let foldme=0
+	echo "Creating folds file - declare foldmethod in folds.vim"
+	echo ""
+	silent !echo '"foldmethod=syntax' > ~/.vim/folds.vim
+	let foldme=0
 endif
 
 set rtp+=~/.vim/bundle/vundle/
@@ -169,7 +169,7 @@ set clipboard=unnamed,unnamedplus
 
 " show a line at column 80
 if exists("&colorcolumn")
-    set colorcolumn=80
+	set colorcolumn=80
 endif
 
 """" Moving Around/Editing
@@ -228,9 +228,9 @@ nnoremap <leader>S :%s/\s\+$//<cr>:let @/=' '<CR>
 
 " Pane independent search
 augroup last_search
-  autocmd!
-  autocmd WinLeave * let w:last_search = @/
-  autocmd WinEnter * if exists('w:last_search') | let @/ = w:last_search | endif
+	autocmd!
+	autocmd WinLeave * let w:last_search = @/
+	autocmd WinEnter * if exists('w:last_search') | let @/ = w:last_search | endif
 augroup END
 
 " Set a few indentation parameters.
@@ -243,7 +243,7 @@ hi TabLineFill ctermfg=23 ctermbg=231
 hi Tabline cterm=NONE ctermfg=231 ctermbg=23
 hi TablineSel cterm=NONE ctermfg=0 ctermbg=149
 
-" Tab navigation in with alt-#
+" Tab navigation in with ,-#
 map <leader>1 :tabnext 1<CR>
 map <leader>2 :tabnext 2<CR>
 map <leader>3 :tabnext 3<CR>
@@ -267,9 +267,6 @@ map <leader>g :GundoToggle<CR>
 
 " Quick open startify
 map <leader>s :Startify<CR>
-
-" .less to .css, lessc is required
-nnoremap ,m :w <BAR> !lessc % > %:t:r.css<CR><space>
 
 " keystroke to toggle numbers.vim plugin
 nnoremap <F3> :NumbersToggle<CR>
@@ -312,14 +309,14 @@ smap <C-k>    <Plug>(neosnippet_expand_or_jump)
 xmap <C-k>    <Plug>(neosnippet_expand_target)
 " SuperTab like snippets behaviour
 imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-      \ "\<Plug>(neosnippet_expand_or_jump)"
-      \: pumvisible() ? "\<C-n>" : "\<TAB>"
+			\ "\<Plug>(neosnippet_expand_or_jump)"
+			\: pumvisible() ? "\<C-n>" : "\<TAB>"
 smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-      \ "\<Plug>(neosnippet_expand_or_jump)"
-      \: "\<TAB>"
+			\ "\<Plug>(neosnippet_expand_or_jump)"
+			\: "\<TAB>"
 " For snippet_complete marker
 if has('conceal')
-  set conceallevel=2 concealcursor=i
+	set conceallevel=2 concealcursor=i
 endif
 " Use Honza's snippets
 let g:neosnippet#enable_snipmate_compatibility = 1
@@ -327,17 +324,17 @@ let g:neosnippet#disable_runtime_snippets = { '-' : 1, }
 let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
 
 if !exists('g:neocomplete#force_omni_input_patterns')
-  let g:neocomplete#force_omni_input_patterns = {}
+	let g:neocomplete#force_omni_input_patterns = {}
 endif
 let g:neocomplete#force_overwrite_completefunc = 1
 let g:neocomplete#force_omni_input_patterns.c =
-      \ '[^.[:digit:] *\t]\%(\.\|->\)\w*'
+			\ '[^.[:digit:] *\t]\%(\.\|->\)\w*'
 let g:neocomplete#force_omni_input_patterns.cpp =
-      \ '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
+			\ '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
 let g:neocomplete#force_omni_input_patterns.objc =
-      \ '\[\h\w*\s\h\?\|\h\w*\%(\.\|->\)'
+			\ '\[\h\w*\s\h\?\|\h\w*\%(\.\|->\)'
 let g:neocomplete#force_omni_input_patterns.objcpp =
-      \ '\[\h\w*\s\h\?\|\h\w*\%(\.\|->\)\|\h\w*::\w*'
+			\ '\[\h\w*\s\h\?\|\h\w*\%(\.\|->\)\|\h\w*::\w*'
 let g:clang_complete_auto = 0
 let g:clang_auto_select = 0
 
@@ -365,27 +362,27 @@ let g:startify_change_to_vcs_root = 1
 let g:startify_session_persistence = 1
 let g:startify_change_to_dir = 1
 let g:startify_list_order = [
-        \ ['    My Sessions'],
-        \ 'sessions',
-        \ ['    Recently Edited Here'],
-        \ 'dir',
-        \ ['    Recently Edited'],
-        \ 'files',
-        \ ['    My Bookmarks'],
-        \ 'bookmarks',
-        \ ]
+			\ ['    My Sessions'],
+			\ 'sessions',
+			\ ['    Recently Edited Here'],
+			\ 'dir',
+			\ ['    Recently Edited'],
+			\ 'files',
+			\ ['    My Bookmarks'],
+			\ 'bookmarks',
+			\ ]
 let g:startify_skiplist = [
-        \ '.git/',
-        \ $VIMRUNTIME .'/doc',
-        \ 'bundle/.*/doc',
-        \ '^/tmp',
-        \ '.*history',
-        \ '.*lock',
-        \ '.news_time',
-        \ '.viminfo',
-        \ '.zcompdump*',
-        \ '.*session-errors*',
-        \]
+			\ '.git/',
+			\ $VIMRUNTIME .'/doc',
+			\ 'bundle/.*/doc',
+			\ '^/tmp',
+			\ '.*history',
+			\ '.*lock',
+			\ '.news_time',
+			\ '.viminfo',
+			\ '.zcompdump*',
+			\ '.*session-errors*',
+			\]
 
 source ~/.vim/headers/watcher.vim
 
