@@ -186,7 +186,6 @@ set linebreak " don't wrap textin the middle of a word
 set autoindent " always set autoindenting on
 set matchpairs+=<:> " show matching <> (html mainly) as well
 set encoding=utf-8
-set smartindent " be smart about indenting
 
 """" Reading/Writing
 set noautowrite " Never write a file unless I request it.
