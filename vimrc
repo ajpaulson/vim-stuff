@@ -3,7 +3,6 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "{{{
 set nocompatible        " be iMproved
-filetype off            " required!
 
 " Set up vim-plug
 let s:vim_plugger = expand('$HOME/.vim/autoload/plug.vim')
@@ -65,7 +64,6 @@ call plug#end()
 "  END BUNDLES / START MAIN RC  "
 """""""""""""""""""""""""""""""""
 "{{{
-filetype plugin indent on   " required!
 runtime macros/matchit.vim " enable matchit
 
 let mapleader="," " change the leader to be a comma vs slash
@@ -129,7 +127,6 @@ map gp :tabprevious<cr>
 "  Basic Settings  "
 """"""""""""""""""""
 "{{{
-syntax on " syntax highlighing
 set number " Display line numbers
 set backspace=indent,eol,start "Allow Backspace in insert mode"
 set numberwidth=1 " using only 1 column (and 1 space) while possible
