@@ -51,7 +51,6 @@ Plug 'Shougo/neosnippet'
 Plug 'honza/vim-snippets'
 Plug 'majutsushi/tagbar'
 Plug 'szw/vim-tags'
-Plug 'myusuf3/numbers.vim'
 Plug 'Pychimp/vim-luna'
 Plug 'lilydjwg/colorizer'
 Plug 'mhinz/vim-startify'
@@ -128,6 +127,7 @@ map gp :tabprevious<cr>
 """"""""""""""""""""
 "{{{
 set number " Display line numbers
+set relativenumber
 set backspace=indent,eol,start "Allow Backspace in insert mode"
 set numberwidth=1 " using only 1 column (and 1 space) while possible
 source ~/.vim/colours.vim
@@ -246,14 +246,8 @@ map <leader>0 :tabnext 0<CR>
 "{{{
 let g:smartusline_string_to_highlight = '[%t]'
 
-" Load the Gundo window
-map <leader>g :GundoToggle<CR>
-
 " Quick open startify
 map <leader>s :Startify<CR>
-
-" keystroke to toggle numbers.vim plugin
-nnoremap <F3> :NumbersToggle<CR>
 
 " SuperTab settings
 let g:SuperTabCrMapping = 0
