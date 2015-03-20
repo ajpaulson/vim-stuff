@@ -281,7 +281,7 @@ inoremap <expr><C-g>    neocomplete#undo_completion()
 inoremap <expr><C-l>    neocomplete#complete_common_string()
 " Tab completion
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-" Neosnippet mappings
+" NeoSnippet mappings (^k to expand a selected snippet)
 imap <C-k>    <Plug>(neosnippet_expand_or_jump)
 smap <C-k>    <Plug>(neosnippet_expand_or_jump)
 xmap <C-k>    <Plug>(neosnippet_expand_target)
@@ -316,9 +316,6 @@ let g:clang_auto_select = 0
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
-" Set options for Taboo
-let g:taboo_tab_format = "%N[%f]%m"
-let g:taboo_renamed_tab_format = "%N[%f]%m"
 " Map TagBar toggle to F8
 nmap <F8> :TagbarToggle<CR>
 
