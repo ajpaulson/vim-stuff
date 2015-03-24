@@ -2,8 +2,6 @@
 "                             Alex's vimrc                                "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "{{{
-set nocompatible        " be iMproved
-
 " Set up vim-plug
 let s:vim_plugger = expand('$HOME/.vim/autoload/plug.vim')
 if filewritable(s:vim_plugger) == 0
