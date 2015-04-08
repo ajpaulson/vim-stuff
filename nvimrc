@@ -123,7 +123,6 @@ source ~/.nvim/statusline.vim
 source ~/.nvim/ScratchEdit.vim
 set title " show title in console title bar
 set wildmenu " Menu completion in command mode on <Tab>
-set wildmode=full " <Tab> cycles between all matching choices.
 set t_Co=256
 " Turn off swap files
 set noswapfile
@@ -160,11 +159,6 @@ set matchpairs+=<:> " show matching <> (html mainly) as well
 set mouse=a " Enable mouse usage (all modes)
 
 """" Reading/Writing
-set noautowrite " Never write a file unless I request it.
-set noautowriteall " NEVER.
-set noautoread " Don't automatically re-read changed files.
-set modeline " Allow vim options to be embedded in files;
-set modelines=5 " they must be within the first or last 5 lines.
 set ffs=unix,dos,mac " Try recognizing dos, unix, and mac line endings.
 autocmd BufWritePre * set ff=unix
 " Prevent vim from setting filetype to `plaintex`
