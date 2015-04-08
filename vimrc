@@ -126,7 +126,6 @@ map gp :tabprevious<cr>
 "{{{
 set number " Display line numbers
 set relativenumber
-set backspace=indent,eol,start "Allow Backspace in insert mode"
 set numberwidth=1 " using only 1 column (and 1 space) while possible
 source ~/.vim/colours.vim
 source ~/.vim/folds.vim
