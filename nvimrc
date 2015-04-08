@@ -123,7 +123,6 @@ source ~/.nvim/statusline.vim
 source ~/.nvim/ScratchEdit.vim
 set title " show title in console title bar
 set wildmenu " Menu completion in command mode on <Tab>
-set t_Co=256
 " Turn off swap files
 set noswapfile
 set nobackup
