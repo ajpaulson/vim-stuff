@@ -141,6 +141,9 @@ set undofile
 " Anonymous register uses system clipboard
 set clipboard=unnamed,unnamedplus
 
+" Debian sets modeline off
+set modeline
+
 " show a line at column 80
 if exists("&colorcolumn")
 	set colorcolumn=80
@@ -159,7 +162,6 @@ set nowrap " don't wrap text
 set linebreak " don't wrap textin the middle of a word
 set autoindent " always set autoindenting on
 set matchpairs+=<:> " show matching <> (html mainly) as well
-set encoding=utf-8
 
 """" Reading/Writing
 set ffs=unix,dos,mac " Try recognizing dos, unix, and mac line endings.
