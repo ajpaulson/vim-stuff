@@ -94,13 +94,6 @@ set grepprg=ack-grep " replace the default grep program with ack
 " Set working directory
 nnoremap <leader>. :lcd %:p:h<CR>
 
-set complete+=.
-set complete+=k
-set complete+=b
-set complete+=t
-set complete+=w
-set complete+=u
-
 """ Insert completion
 " don't select first item, follow typing in autocomplete
 set completeopt=menuone,longest,preview
