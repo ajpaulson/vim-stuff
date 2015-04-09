@@ -135,17 +135,6 @@ imap <c-j> <c-o><c-w>j
 imap <c-k> <c-o><c-w>k
 imap <c-l> <c-o><c-w>l
 imap <c-h> <c-o><c-w>h
-" Tab navigation in with ,-#
-map <leader>1 :tabnext 1<CR>
-map <leader>2 :tabnext 2<CR>
-map <leader>3 :tabnext 3<CR>
-map <leader>4 :tabnext 4<CR>
-map <leader>5 :tabnext 5<CR>
-map <leader>6 :tabnext 6<CR>
-map <leader>7 :tabnext 7<CR>
-map <leader>8 :tabnext 8<CR>
-map <leader>9 :tabnext 9<CR>
-map <leader>0 :tabnext 0<CR>
 """ easier navigation of tabs
 """ :sb <tab-complete name of file open in other tab>
 set switchbuf=useopen,usetab
