@@ -221,6 +221,16 @@ let g:syntastic_c_check_header = 1
 let g:syntastic_c_no_default_include_dirs = 1
 let g:syntastic_c_compiler = 'clang'
 
+" close preview window automatically when we move around
+autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+
+" Fugitive - go to repo root
+nnoremap <leader>/ :Glcd<CR>
+
+" Map TagBar toggle to F8
+nmap <F8> :TagbarToggle<CR>
+
 " NeoComplete and NeoSnippets
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
@@ -261,20 +271,6 @@ let g:neocomplete#force_omni_input_patterns.cpp =
 			\ '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
 let g:clang_complete_auto = 0
 let g:clang_auto_select = 0
-
-" close preview window automatically when we move around
-autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
-autocmd InsertLeave * if pumvisible() == 0|pclose|endif
-
-" Map TagBar toggle to F8
-nmap <F8> :TagbarToggle<CR>
-
-" Fugitive - go to repo root
-nnoremap <leader>/ :Glcd<CR>
-
-" Colorizer changed all their shit
-nmap <F4> <Plug>Colorizer
-let g:colorizer_startup = 0
 
 " Hack to disable colorcolumn for startify
 autocmd FileType startify setlocal colorcolumn&
