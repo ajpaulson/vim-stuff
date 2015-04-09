@@ -41,7 +41,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'ervandew/supertab'
 Plug 'Shougo/neocomplcache'
 Plug 'Shougo/neosnippet'
-Plug 'Shougo/neosnippet-snippets'
+Plug 'honza/vim-snippets'
 Plug 'Pychimp/vim-luna'
 Plug 'lilydjwg/colorizer'
 Plug 'mhinz/vim-startify'
@@ -211,6 +211,7 @@ let g:syntastic_sh_checkers=[ "bashate" ]
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
+" Fugitive - go to repo root
 nnoremap <leader>/ :Glcd<CR>
 
 " NeoComplCache and NeoSnippet configuration
@@ -232,6 +233,10 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 if has('conceal')
 	set conceallevel=2 concealcursor=i
 endif
+" Use Honza's snippets
+let g:neosnippet#enable_snipmate_compatibility = 1
+let g:neosnippet#disable_runtime_snippets = { '-' : 1, }
+let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
 
 " Hack to disable colorcolumn for startify
 autocmd FileType startify setlocal colorcolumn&
