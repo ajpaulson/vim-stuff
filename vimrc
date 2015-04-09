@@ -99,8 +99,7 @@ augroup last_search
 	autocmd WinLeave * let w:last_search = @/
 	autocmd WinEnter * if exists('w:last_search') | let @/ = w:last_search | endif
 augroup END
-" Turn off swap files
-set noswapfile
+set noswapfile " Turn off swap files
 set nowb "no writebackup
 "keep undo history across sessions by storing in file
 let s:vim_cache = expand('$HOME/.vim/backups')
@@ -189,7 +188,6 @@ nnoremap <leader>S :%s/\s\+$//<cr>:let @/=' '<CR>
 hi TabLineFill ctermfg=23 ctermbg=231
 hi Tabline cterm=NONE ctermfg=231 ctermbg=23
 hi TablineSel cterm=NONE ctermfg=0 ctermbg=149
-
 "}}}
 
 "  Plugin Configurations
@@ -302,6 +300,5 @@ let g:startify_skiplist = [
 			\]
 
 source ~/.vim/headers/watcher.vim
-
 "}}}
 " vim:ft=vim:fdm=marker

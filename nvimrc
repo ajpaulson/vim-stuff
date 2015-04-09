@@ -270,6 +270,5 @@ let g:startify_skiplist = [
 			\]
 
 source ~/.nvim/headers/octocat.vim
-
 "}}}
 " vim:ft=vim:fdm=marker
