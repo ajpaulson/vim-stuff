@@ -1,6 +1,4 @@
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                             Alex's nvimrc                                "
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"  Alex's nvimrc
 "{{{
 " Set up vim-plug
 let s:vim_plugger = expand('$HOME/.nvim/autoload/plug.vim')
@@ -29,9 +27,7 @@ if !filereadable(folds_vim)
 endif
 "}}}
 
-""""""""""""""""""""""
-"  Bundles go here:  "
-""""""""""""""""""""""
+"  Bundles go here:
 "{{{
 call plug#begin('~/.nvim/plugged')
 Plug 'tpope/vim-fugitive'
@@ -54,66 +50,13 @@ Plug 'molok/vim-smartusline'
 call plug#end()
 "}}}
 
-"""""""""""""""""""""""""""""""""
-"  END BUNDLES / START MAIN RC  "
-"""""""""""""""""""""""""""""""""
+"  END BUNDLES / START MAIN RC
 "{{{
 runtime macros/matchit.vim " enable matchit
 
 let mapleader="," " change the leader to be a comma vs slash
 
-" ,v brings up my .vimrc
-" ,V reloads it -- making all changes active (have to save first)
-map <leader>v :tabe ~/.nvimrc<CR><C-W>_
-map <silent> <leader>V :source ~/.nvimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
-
-" ctrl-jklm changes to that split
-map <c-j> <c-w>j
-map <c-k> <c-w>k
-map <c-l> <c-w>l
-map <c-h> <c-w>h
-
-" and lets make these all work in insert mode too ( <C-O> makes next cmd
-" happen as if in command mode )
-imap <c-j> <c-o><c-w>j
-imap <c-k> <c-o><c-w>k
-imap <c-l> <c-o><c-w>l
-imap <c-h> <c-o><c-w>h
-
-" More natural splits
-set splitbelow
-set splitright
-
-"Spell Check (f for fuckup)
-map <silent> <leader>f :set spell!<CR>
-
-" Ignore these files when completing
-set wildignore+=*.o,*.obj,.git,*.pyc
-set grepprg=ack-grep " replace the default grep program with ack
-
-" Set working directory
-nnoremap <leader>. :lcd %:p:h<CR>
-
-""" Insert completion
-" don't select first item, follow typing in autocomplete
-set completeopt=menuone,longest,preview
-set pumheight=6 " Keep a small completion window
-set omnifunc=syntaxcomplete#Complete
-
-" Improve register use
-" Don't update default register when deleting single characters
-noremap x "_x
-" Don't update default register when pasting in visual mode
-vnoremap p "_c<Esc>P
-
-map <leader>q :tabclose<cr>
-map gp :tabprevious<cr>
-"}}}
-
-""""""""""""""""""""
-"  Basic Settings  "
-""""""""""""""""""""
-"{{{
+"  Basic Settings
 set number " Display line numbers
 set relativenumber
 set numberwidth=1 " using only 1 column (and 1 space) while possible
@@ -123,9 +66,38 @@ source ~/.nvim/statusline.vim
 source ~/.nvim/ScratchEdit.vim
 set title " show title in console title bar
 set wildmenu " Menu completion in command mode on <Tab>
-" Turn off swap files
-set noswapfile
-set nobackup
+set wildignore+=*.o,*.obj,.git,*.pyc " Ignore these files when completing
+set completeopt=menuone,longest,preview " don't select first item, follow typing in autocomplete
+set pumheight=6 " Keep a small completion window
+set omnifunc=syntaxcomplete#Complete
+set grepprg=ack-grep " replace the default grep program with ack
+set splitbelow
+set splitright
+set ls=2 " Always show status line ('laststatus')
+set vb t_vb= " Disable all bells. I hate ringing/flashing.
+set confirm " Y-N-C prompt if closing with unsaved changes.
+set showcmd " Show incomplete normal mode commands as I type.
+set report=0 " : commands always print changed line count.
+set shortmess+=a " Use [+]/[RO]/[w] for modified/readonly/written.
+set ruler " Show some info, even without statuslines.
+set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,5c5V\ %P%) " a ruler on steroids
+" Easily see tabs, spaces, end of line etc.
+set listchars=tab:>-,eol:¶,trail:≖,precedes:<,extends:>
+set list
+" Clean up for :terminal
+au TermOpen * setlocal nolist nocursorline nocursorcolumn
+""" Searching and Patterns
+set ignorecase " Default to using case insensitive searches,
+set smartcase " unless uppercase letters are used in the regex.
+set hlsearch " Highlight searches by default.
+set incsearch " Incrementally search while typing a /regex
+" Pane independent search
+augroup last_search
+	autocmd!
+	autocmd WinLeave * let w:last_search = @/
+	autocmd WinEnter * if exists('w:last_search') | let @/ = w:last_search | endif
+augroup END
+set noswapfile " Turn off swap files
 set nowb "no writebackup
 "keep undo history across sessions by storing in file
 let s:vim_cache = expand('$HOME/.nvim/backups')
@@ -134,15 +106,6 @@ if filewritable(s:vim_cache) == 0 && exists("*mkdir")
 endif
 set undodir=~/.nvim/backups
 set undofile
-" Anonymous register uses system clipboard
-set clipboard=unnamed,unnamedplus
-
-" show a line at column 80
-if exists("&colorcolumn")
-	set colorcolumn=80
-endif
-
-"""" Moving Around/Editing
 set cursorline " have a line indicate the cursor location
 set cursorcolumn " have a column to indicate the cursor location
 set nostartofline " Avoid moving cursor to BOL when jumping around
@@ -156,59 +119,21 @@ set linebreak " don't wrap textin the middle of a word
 set autoindent " always set autoindenting on
 set matchpairs+=<:> " show matching <> (html mainly) as well
 set mouse=a " Enable mouse usage (all modes)
-
-"""" Reading/Writing
-set ffs=unix,dos,mac " Try recognizing dos, unix, and mac line endings.
-autocmd BufWritePre * set ff=unix
-" Prevent vim from setting filetype to `plaintex`
-let g:tex_flavor='latex'
-
-"""" Messages, Info, Status
-set ls=2 " Always show status line ('laststatus')
-set vb t_vb= " Disable all bells. I hate ringing/flashing.
-set confirm " Y-N-C prompt if closing with unsaved changes.
-set showcmd " Show incomplete normal mode commands as I type.
-set report=0 " : commands always print changed line count.
-set shortmess+=a " Use [+]/[RO]/[w] for modified/readonly/written.
-set ruler " Show some info, even without statuslines.
-set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,5c5V\ %P%) " a ruler on steroids
-
-" Easily see tabs, spaces, end of line etc.
-set listchars=tab:>-,eol:¶,trail:≖,precedes:<,extends:>
-set list
-" Clean up for :terminal
-au TermOpen * setlocal nolist nocursorline nocursorcolumn
-
-""" Searching and Patterns
-set ignorecase " Default to using case insensitive searches,
-set smartcase " unless uppercase letters are used in the regex.
-set hlsearch " Highlight searches by default.
-set incsearch " Incrementally search while typing a /regex
-
-""" easier navigation of tabs
-""" :sb <tab-complete name of file open in other tab>
-set switchbuf=useopen,usetab
-
-"Remove trailing whitespace on <leader>S
-nnoremap <leader>S :%s/\s\+$//<cr>:let @/=' '<CR>
-
-" Pane independent search
-augroup last_search
-	autocmd!
-	autocmd WinLeave * let w:last_search = @/
-	autocmd WinEnter * if exists('w:last_search') | let @/ = w:last_search | endif
-augroup END
-
 " Set a few indentation parameters.
 set cinoptions=:0,g0,(0,Ws,l1
 " Add and delete spaces in increments of 'shiftwidth' for tabs
 set smarttab
-
-" Tabline colours
-hi TabLineFill ctermfg=23 ctermbg=231
-hi Tabline cterm=NONE ctermfg=231 ctermbg=23
-hi TablineSel cterm=NONE ctermfg=0 ctermbg=149
-
+" ctrl-jklm changes to that split
+map <c-j> <c-w>j
+map <c-k> <c-w>k
+map <c-l> <c-w>l
+map <c-h> <c-w>h
+" and lets make these all work in insert mode too ( <C-O> makes next cmd
+" happen as if in command mode )
+imap <c-j> <c-o><c-w>j
+imap <c-k> <c-o><c-w>k
+imap <c-l> <c-o><c-w>l
+imap <c-h> <c-o><c-w>h
 " Tab navigation in with ,-#
 map <leader>1 :tabnext 1<CR>
 map <leader>2 :tabnext 2<CR>
@@ -220,11 +145,51 @@ map <leader>7 :tabnext 7<CR>
 map <leader>8 :tabnext 8<CR>
 map <leader>9 :tabnext 9<CR>
 map <leader>0 :tabnext 0<CR>
+""" easier navigation of tabs
+""" :sb <tab-complete name of file open in other tab>
+set switchbuf=useopen,usetab
+
+" Anonymous register uses system clipboard
+set clipboard=unnamed,unnamedplus
+" Don't update default register when deleting single characters
+noremap x "_x
+" Don't update default register when pasting in visual mode
+vnoremap p "_c<Esc>P
+" show a line at column 80
+if exists("&colorcolumn")
+	set colorcolumn=80
+endif
+
+" ,v brings up my .vimrc
+" ,V reloads it -- making all changes active (have to save first)
+map <leader>v :tabe ~/.nvimrc<CR><C-W>_
+map <silent> <leader>V :source ~/.nvimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
+
+"Spell Check (f for fuckup)
+map <silent> <leader>f :set spell!<CR>
+
+" Set working directory
+nnoremap <leader>. :lcd %:p:h<CR>
+
+map <leader>q :tabclose<cr>
+map gp :tabprevious<cr>
+
+"""" Reading/Writing
+set ffs=unix,dos,mac " Try recognizing dos, unix, and mac line endings.
+autocmd BufWritePre * set ff=unix
+" Prevent vim from setting filetype to `plaintex`
+let g:tex_flavor='latex'
+
+"Remove trailing whitespace on <leader>S
+nnoremap <leader>S :%s/\s\+$//<cr>:let @/=' '<CR>
+
+" Tabline colours
+hi TabLineFill ctermfg=23 ctermbg=231
+hi Tabline cterm=NONE ctermfg=231 ctermbg=23
+hi TablineSel cterm=NONE ctermfg=0 ctermbg=149
 "}}}
 
-"""""""""""""""""""""""""""
-"  Plugin Configurations  "
-"""""""""""""""""""""""""""
+"  Plugin Configurations
 "{{{
 let g:smartusline_string_to_highlight = '[%t]'
 
