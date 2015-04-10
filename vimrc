@@ -39,7 +39,6 @@ Plug 'tpope/vim-repeat'
 Plug 'scrooloose/syntastic'
 Plug 'sheerun/vim-polyglot'
 Plug 'ervandew/supertab'
-Plug 'Rip-Rip/clang_complete'
 Plug 'Shougo/neocomplete'
 Plug 'Shougo/neosnippet'
 Plug 'honza/vim-snippets'
@@ -194,16 +193,6 @@ let g:SuperTabLongestHighligth = 1
 " See how context aware completion type works
 let g:SuperTabSetDefaultCompletionType = 'context'
 
-" Set options for clang complete
-let g:clang_use_library = 1
-if filereadable('/usr/lib/llvm-3.6/lib/libclang.so')
-	let g:clang_library_path='/usr/lib/llvm-3.6/lib'
-elseif filereadable('/usr/lib/llvm-3.5/lib/libclang.so')
-	let g:clang_library_path='/usr/lib/llvm-3.5/lib'
-endif
-let g:clang_complete_auto = 0
-let g:clang_auto_select = 0
-
 " Syntastic rules
 let g:syntastic_c_checkers = [ 'clang' ]
 let g:syntastic_c_check_header = 1
@@ -224,7 +213,8 @@ nmap <F8> :TagbarToggle<CR>
 " NeoComplete and NeoSnippets
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
-let g:neocomplete#enable_omni_fallback = 1
+let g:neocomplete#fallback_mappings =
+	\ ["\<C-x>\<C-o>", "\<C-x>\<C-n>"]
 let g:neocomplete#sources#syntax#min_keyword_length = 2
 let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 inoremap <expr><C-g>    neocomplete#undo_completion()
@@ -235,14 +225,14 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 imap <C-k>    <Plug>(neosnippet_expand_or_jump)
 smap <C-k>    <Plug>(neosnippet_expand_or_jump)
 xmap <C-k>    <Plug>(neosnippet_expand_target)
-" SuperTab like snippets behaviour
+" SuperTab like NeoSnippet mappings (tab to jump to next field)
 imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 			\ "\<Plug>(neosnippet_expand_or_jump)"
 			\: pumvisible() ? "\<C-n>" : "\<TAB>"
 smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 			\ "\<Plug>(neosnippet_expand_or_jump)"
 			\: "\<TAB>"
-" For snippet_complete marker
+" For snippet complete marker
 if has('conceal')
 	set conceallevel=2 concealcursor=i
 endif

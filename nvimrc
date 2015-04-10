@@ -39,7 +39,6 @@ Plug 'tpope/vim-repeat'
 Plug 'scrooloose/syntastic'
 Plug 'sheerun/vim-polyglot'
 Plug 'ervandew/supertab'
-Plug 'Rip-Rip/clang_complete'
 Plug 'Shougo/neocomplcache'
 Plug 'Shougo/neosnippet'
 Plug 'honza/vim-snippets'
@@ -196,14 +195,6 @@ let g:SuperTabLongestHighligth = 1
 " See how context aware completion type works
 let g:SuperTabSetDefaultCompletionType = 'context'
 
-" Set options for clang complete
-let g:clang_use_library = 1
-if filereadable('/usr/lib/llvm-3.6/lib/libclang.so')
-	let g:clang_library_path='/usr/lib/llvm-3.6/lib'
-elseif filereadable('/usr/lib/llvm-3.5/lib/libclang.so')
-	let g:clang_library_path='/usr/lib/llvm-3.5/lib'
-endif
-
 " Syntastic rules
 let g:syntastic_c_checkers = [ 'clang' ]
 let g:syntastic_c_check_header = 1
@@ -223,8 +214,14 @@ nmap <F8> :TagbarToggle<CR>
 
 " NeoComplCache and NeoSnippet configuration
 let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_enable_smart_case = 1
+
+let g:neocomplcache_sources_syntax_min_keyword_length = 2
+let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 inoremap <expr><C-g>    neocomplcache#undo_completion()
 inoremap <expr><C-l>    neocomplcache#complete_common_string()
+" Tab completion
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 " NeoSnippet mappings (^k to expand a selected snippet)
 imap <C-k>    <Plug>(neosnippet_expand_or_jump)
 smap <C-k>    <Plug>(neosnippet_expand_or_jump)
@@ -244,6 +241,15 @@ endif
 let g:neosnippet#enable_snipmate_compatibility = 1
 let g:neosnippet#disable_runtime_snippets = { '-' : 1, }
 let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
+
+if !exists('g:neocomplcache_force_omni_patterns')
+	let g:neocomplcache_force_omni_patterns = {}
+endif
+let g:neocomplcache_force_overwrite_completefunc = 1
+let g:neocomplcache_force_omni_patterns.c =
+			\ '[^.[:digit:] *\t]\%(\.\|->\)\w*'
+let g:neocomplcache_force_omni_patterns.cpp =
+			\ '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
 
 " Hack to disable colorcolumn for startify
 autocmd FileType startify setlocal colorcolumn&
