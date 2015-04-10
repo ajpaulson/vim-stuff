@@ -39,7 +39,7 @@ Plug 'tpope/vim-repeat'
 Plug 'scrooloose/syntastic'
 Plug 'sheerun/vim-polyglot'
 Plug 'ervandew/supertab'
-Plug 'Rip-Rip/clang_complete'
+Plug 'Rip-Rip/clang_complete', {'do': 'make install' }
 Plug 'Shougo/neocomplete'
 Plug 'Shougo/neosnippet'
 Plug 'honza/vim-snippets'
