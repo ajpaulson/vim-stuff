@@ -196,7 +196,19 @@ let g:SuperTabLongestHighligth = 1
 " See how context aware completion type works
 let g:SuperTabSetDefaultCompletionType = 'context'
 
-" Use bashate for shell scripts
+" Set options for clang complete
+let g:clang_use_library = 1
+if filereadable('/usr/lib/llvm-3.6/lib/libclang.so')
+	let g:clang_library_path='/usr/lib/llvm-3.6/lib'
+elseif filereadable('/usr/lib/llvm-3.5/lib/libclang.so')
+	let g:clang_library_path='/usr/lib/llvm-3.5/lib'
+endif
+
+" Syntastic rules
+let g:syntastic_c_checkers = [ 'clang' ]
+let g:syntastic_c_check_header = 1
+let g:syntastic_c_no_default_include_dirs = 1
+let g:syntastic_c_compiler = 'clang'
 let g:syntastic_sh_checkers=[ "bashate" ]
 
 " close preview window automatically when we move around
@@ -205,6 +217,9 @@ autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
 " Fugitive - go to repo root
 nnoremap <leader>/ :Glcd<CR>
+
+" Map TagBar toggle to F8
+nmap <F8> :TagbarToggle<CR>
 
 " NeoComplCache and NeoSnippet configuration
 let g:neocomplcache_enable_at_startup = 1
