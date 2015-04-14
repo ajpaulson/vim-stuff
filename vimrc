@@ -38,7 +38,6 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'scrooloose/syntastic'
 Plug 'sheerun/vim-polyglot'
-Plug 'ervandew/supertab'
 Plug 'Shougo/neocomplete'
 Plug 'Shougo/neosnippet'
 Plug 'honza/vim-snippets'
@@ -185,14 +184,6 @@ let g:smartusline_string_to_highlight = '[%t]'
 " Quick open startify
 map <leader>s :Startify<CR>
 
-" SuperTab settings
-let g:SuperTabCrMapping = 0
-let g:SuperTabMappingBackward = '<c-tab>' " Free up Shift-Tab
-let g:SuperTabMappingLiteral = '<s-tab>'
-let g:SuperTabLongestHighligth = 1
-" See how context aware completion type works
-let g:SuperTabSetDefaultCompletionType = 'context'
-
 " Syntastic rules
 let g:syntastic_c_checkers = [ 'clang' ]
 let g:syntastic_c_check_header = 1
@@ -211,6 +202,7 @@ nnoremap <leader>/ :Glcd<CR>
 nmap <F8> :TagbarToggle<CR>
 
 " NeoComplete and NeoSnippets
+let g:acp_enableAtStartup = 0
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
 let g:neocomplete#fallback_mappings =
@@ -234,7 +226,7 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 			\: "\<TAB>"
 " For snippet complete marker
 if has('conceal')
-	set conceallevel=2 concealcursor=i
+	set conceallevel=2 concealcursor=inv
 endif
 " Use Honza's snippets
 let g:neosnippet#enable_snipmate_compatibility = 1
