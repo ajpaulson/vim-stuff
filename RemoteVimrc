@@ -1,0 +1,56 @@
+set nocompatible
+set backspace=indent,eol,start
+
+syntax on
+
+set background=dark
+colorscheme desert
+
+filetype plugin indent on
+
+set showcmd
+set showmatch
+set ignorecase
+set smartcase
+set incsearch
+set autowrite
+set hidden
+
+set relativenumber
+set numberwidth=1
+set ls=2
+set ruler
+set confirm
+set list
+set listchars=tab:>-,eol:¶,trail:≖,precedes:<,extends:>
+
+set history=50
+set tabstop=2
+set modeline
+set modelines=2
+set cursorline
+set cursorcolumn
+set colorcolumn=80
+set scrolloff=5
+set nowrap
+
+set autoindent
+set encoding=utf-8
+set smartindent
+set title
+set wildmenu
+set wildmode=full
+set t_Co=256
+
+set omnifunc=syntaxcomplete#Complete
+set completeopt=menuone,longest,preview
+set pumheight=6
+
+" Suffixes that get lower priority when doing tabcompletion for filenames.
+" These are files that we are not likely to want to edit or read.
+set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
+
+" change the leader to be a comma vs slash
+let mapleader=","
+"Remove trailing whitespace on <leader>S
+nnoremap <leader>S :%s/\s\+$//<cr>:let @/=' '<CR>
