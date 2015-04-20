@@ -174,6 +174,9 @@ let g:tex_flavor='latex'
 "Remove trailing whitespace on <leader>S
 nnoremap <leader>S :%s/\s\+$//<cr>:let @/=' '<CR>
 
+"Use pandoc to create a pdf of current file
+nnoremap <Leader>p :!pandoc % -s -o %:r.pdf<CR>
+
 " Tabline colours
 hi TabLineFill ctermfg=23 ctermbg=231
 hi Tabline cterm=NONE ctermfg=231 ctermbg=23
