@@ -55,9 +55,8 @@ call plug#end()
 "{{{
 runtime macros/matchit.vim " enable matchit
 
-let mapleader="," " change the leader to be a comma vs slash
-
 "  Basic Settings
+let mapleader="," " change the leader to be a comma vs slash
 set number " Display line numbers
 set relativenumber
 set numberwidth=1 " using only 1 column (and 1 space) while possible
@@ -83,10 +82,8 @@ set report=0 " : commands always print changed line count.
 set shortmess+=a " Use [+]/[RO]/[w] for modified/readonly/written.
 set ruler " Show some info, even without statuslines.
 set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,5c5V\ %P%) " a ruler on steroids
-" Easily see tabs, spaces, end of line etc.
-set listchars=tab:>-,eol:¶,trail:≖,precedes:<,extends:>
+set listchars=tab:>-,eol:¶,trail:≖,precedes:<,extends:> " Easily see tabs, spaces, end of line etc.
 set list
-""" Searching and Patterns
 set ignorecase " Default to using case insensitive searches,
 set smartcase " unless uppercase letters are used in the regex.
 set hlsearch " Highlight searches by default.
@@ -118,30 +115,24 @@ set nowrap " don't wrap text
 set linebreak " don't wrap textin the middle of a word
 set autoindent " always set autoindenting on
 set matchpairs+=<:> " show matching <> (html mainly) as well
-" Set a few indentation parameters.
-set cinoptions=:0,g0,(0,Ws,l1
-" Add and delete spaces in increments of 'shiftwidth' for tabs
-set smarttab
+set cinoptions=:0,g0,(0,Ws,l1 " Set a few indentation parameters.
+set smarttab " Add and delete spaces in increments of 'shiftwidth' for tabs
+set switchbuf=useopen,usetab
+map <leader>q :tabclose<cr>
+map gp :tabprevious<cr>
 " ctrl-jklm changes to that split
 map <c-j> <c-w>j
 map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
-" and lets make these all work in insert mode too ( <C-O> makes next cmd
-" happen as if in command mode )
+" and lets make these all work in insert mode too
 imap <c-j> <c-o><c-w>j
 imap <c-k> <c-o><c-w>k
 imap <c-l> <c-o><c-w>l
 imap <c-h> <c-o><c-w>h
-""" easier navigation of tabs
-""" :sb <tab-complete name of file open in other tab>
-set switchbuf=useopen,usetab
 
-" Anonymous register uses system clipboard
-set clipboard=unnamed,unnamedplus
-" Don't update default register when deleting single characters
+set clipboard=unnamed,unnamedplus " Anonymous register uses system clipboard
 noremap x "_x
-" Don't update default register when pasting in visual mode
 vnoremap p "_c<Esc>P
 " show a line at column 80
 if exists("&colorcolumn")
@@ -155,24 +146,18 @@ map <silent> <leader>V :source ~/.vim/vimrc<CR>:filetype detect<CR>:exe ":echo '
 
 "Spell Check (f for fuckup)
 map <silent> <leader>f :set spell!<CR>
-
 " Set working directory
 nnoremap <leader>. :lcd %:p:h<CR>
-
-map <leader>q :tabclose<cr>
-map gp :tabprevious<cr>
+"Remove trailing whitespace on <leader>S
+nnoremap <leader>S :%s/\s\+$//<cr>:let @/=' '<CR>
+"Use pandoc to create a pdf of current file
+nnoremap <Leader>p :!pandoc % -s -o %:r.pdf<CR>
 
 """" Reading/Writing
 set ffs=unix,dos,mac " Try recognizing dos, unix, and mac line endings.
 autocmd BufWritePre * set ff=unix
 " Prevent vim from setting filetype to `plaintex`
 let g:tex_flavor='latex'
-
-"Remove trailing whitespace on <leader>S
-nnoremap <leader>S :%s/\s\+$//<cr>:let @/=' '<CR>
-
-"Use pandoc to create a pdf of current file
-nnoremap <Leader>p :!pandoc % -s -o %:r.pdf<CR>
 
 " Tabline colours
 hi TabLineFill ctermfg=23 ctermbg=231
