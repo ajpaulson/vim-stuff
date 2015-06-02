@@ -66,7 +66,6 @@ source ~/.nvim/folds.vim
 source ~/.nvim/statusline.vim
 source ~/.nvim/ScratchEdit.vim
 set title " show title in console title bar
-set wildmenu " Menu completion in command mode on <Tab>
 set wildignore+=*.o,*.obj,.git,*.pyc " Ignore these files when completing
 set completeopt=menuone,longest,preview " don't select first item, follow typing in autocomplete
 set pumheight=6 " Keep a small completion window
