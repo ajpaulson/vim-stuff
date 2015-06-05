@@ -54,8 +54,6 @@ call plug#end()
 
 "  END BUNDLES / START MAIN RC
 "{{{
-runtime macros/matchit.vim " enable matchit
-
 "  Basic Settings
 let mapleader="," " change the leader to be a comma vs slash
 set number " Display line numbers
