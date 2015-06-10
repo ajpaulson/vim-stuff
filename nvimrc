@@ -130,7 +130,7 @@ imap <c-k> <c-o><c-w>k
 imap <c-l> <c-o><c-w>l
 imap <c-h> <c-o><c-w>h
 
-set clipboard=unnamed,unnamedplus " Anonymous register uses system clipboard
+set clipboard+=unnamedplus "Neovim uses xclip or xsel
 noremap x "_x
 vnoremap p "_c<Esc>P
 " show a line at column 80
