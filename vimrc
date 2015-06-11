@@ -44,6 +44,7 @@ Plug 'honza/vim-snippets'
 Plug 'majutsushi/tagbar'
 Plug 'szw/vim-tags'
 Plug 'Pychimp/vim-luna'
+Plug 'kien/rainbow_parentheses.vim'
 Plug 'lilydjwg/colorizer'
 Plug 'mhinz/vim-startify'
 Plug 'ajpaulson/notes.vim'
@@ -190,6 +191,34 @@ nnoremap <leader>/ :Glcd<CR>
 
 " Map TagBar toggle to F8
 nmap <F8> :TagbarToggle<CR>
+
+"Rainbow Parentheses Always on
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+
+let g:rbpt_colorpairs = [
+    \ ['brown',       'RoyalBlue3'],
+    \ ['Darkblue',    'SeaGreen3'],
+    \ ['darkgray',    'DarkOrchid3'],
+    \ ['darkgreen',   'firebrick3'],
+    \ ['darkcyan',    'RoyalBlue3'],
+    \ ['darkred',     'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['brown',       'firebrick3'],
+    \ ['gray',        'RoyalBlue3'],
+    \ ['black',       'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['Darkblue',    'firebrick3'],
+    \ ['darkgreen',   'RoyalBlue3'],
+    \ ['darkcyan',    'SeaGreen3'],
+    \ ['darkred',     'DarkOrchid3'],
+    \ ['red',         'firebrick3'],
+    \ ]
+
+let g:rbpt_max = 16
+let g:rbpt_loadcmd_toggle = 0
 
 " NeoComplete and NeoSnippets
 let g:acp_enableAtStartup = 0
