@@ -131,11 +131,6 @@ imap <c-k> <c-o><c-w>k
 imap <c-l> <c-o><c-w>l
 imap <c-h> <c-o><c-w>h
 
-if has("autocmd")
-  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "no
-rmal! g'\"" | endif
-endif
-
 set clipboard+=unnamedplus "Neovim uses xclip or xsel
 noremap x "_x
 vnoremap p "_c<Esc>P
