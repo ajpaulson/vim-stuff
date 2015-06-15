@@ -139,6 +139,11 @@ if exists("&colorcolumn")
 	set colorcolumn=80
 endif
 
+autocmd BufReadPost *
+  \ if line("'\"") > 1 && line("'\"") <= line("$") |
+  \   exe "normal! g`\"" |
+  \ endif
+
 " ,v brings up my .vimrc
 " ,V reloads it -- making all changes active (have to save first)
 map <leader>v :tabe ~/.nvimrc<CR><C-W>_
