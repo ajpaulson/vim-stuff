@@ -233,14 +233,13 @@ let g:neosnippet#enable_snipmate_compatibility = 1
 let g:neosnippet#disable_runtime_snippets = { '-' : 1, }
 let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
 
-if !exists('g:neocomplete#force_omni_input_patterns')
-	let g:neocomplete#force_omni_input_patterns = {}
+if !exists('g:neocomplete#sources#omni#input_patterns')
+	let g:neocomplete#sources#omni#input_patterns = {}
 endif
-let g:neocomplete#force_overwrite_completefunc = 1
-let g:neocomplete#force_omni_input_patterns.c =
-			\ '[^.[:digit:] *\t]\%(\.\|->\)\w*'
-let g:neocomplete#force_omni_input_patterns.cpp =
-			\ '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
+let g:neocomplete#sources#omni#input_patterns.c =
+			\ '[^.[:digit:] *\t]\%(\.\|->\)'
+let g:neocomplete#sources#omni#input_patterns.cpp =
+			\ '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
 
 " Hack to disable colorcolumn for startify
 autocmd FileType startify setlocal colorcolumn&
