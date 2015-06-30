@@ -27,7 +27,7 @@ if !filereadable(folds_vim)
 endif
 "}}}
 
-"  Bundles go here:
+"  Plugins go here:
 "{{{
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-fugitive'
@@ -231,7 +231,7 @@ endif
 " Use Honza's snippets
 let g:neosnippet#enable_snipmate_compatibility = 1
 let g:neosnippet#disable_runtime_snippets = { '-' : 1, }
-let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
+let g:neosnippet#snippets_directory='~/.vim/plugged/vim-snippets/snippets'
 
 if !exists('g:neocomplete#sources#omni#input_patterns')
 	let g:neocomplete#sources#omni#input_patterns = {}
@@ -261,6 +261,7 @@ let g:startify_skiplist = [
 			\ '.git/',
 			\ $VIMRUNTIME .'/doc',
 			\ 'bundle/.*/doc',
+			\ 'plugged/.*/doc',
 			\ '^/tmp',
 			\ '.*history',
 			\ '.*lock',
