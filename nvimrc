@@ -17,14 +17,6 @@ if !filereadable(colour_vim)
 	silent !echo 'colorscheme luna-term' > ~/.nvim/colours.vim
 	let colourme=0
 endif
-let foldme=1
-let folds_vim=expand('~/.nvim/folds.vim')
-if !filereadable(folds_vim)
-	echo "Creating folds file - declare foldmethod in folds.vim"
-	echo ""
-	silent !echo '"foldmethod=syntax' > ~/.nvim/folds.vim
-	let foldme=0
-endif
 "}}}
 
 "  Plugins go here:
@@ -61,7 +53,6 @@ set number " Display line numbers
 set relativenumber
 set numberwidth=1 " using only 1 column (and 1 space) while possible
 source ~/.nvim/colours.vim
-source ~/.nvim/folds.vim
 source ~/.nvim/statusline.vim
 source ~/.nvim/ScratchEdit.vim
 set title " show title in console title bar
