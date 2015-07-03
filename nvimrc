@@ -78,6 +78,7 @@ set ignorecase " Default to using case insensitive searches,
 set smartcase " unless uppercase letters are used in the regex.
 set hlsearch " Highlight searches by default.
 set incsearch " Incrementally search while typing a /regex
+set tildeop " Tilde command acts like an operator
 " Pane independent search
 augroup last_search
 	autocmd!
