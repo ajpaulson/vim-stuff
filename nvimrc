@@ -271,6 +271,6 @@ let g:startify_skiplist = [
 			\ '.nvim*',
 			\]
 
-source ~/.nvim/headers/octocat.vim
+source ~/.nvim/headers/kraken.vim
 "}}}
 " vim:ft=vim:fdm=marker
