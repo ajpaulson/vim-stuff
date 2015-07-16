@@ -79,8 +79,6 @@ set list
 au TermOpen * setlocal nolist nocursorline nocursorcolumn " Clean up for :terminal
 set ignorecase " Default to using case insensitive searches,
 set smartcase " unless uppercase letters are used in the regex.
-set hlsearch " Highlight searches by default.
-set incsearch " Incrementally search while typing a /regex
 set tildeop " Tilde command acts like an operator
 " Pane independent search
 augroup last_search
@@ -102,16 +100,12 @@ set cursorcolumn " have a column to indicate the cursor location
 set nostartofline " Avoid moving cursor to BOL when jumping around
 set virtualedit=block " Let cursor move past the last char in <C-v> mode
 set scrolloff=5 " Keep 3 context lines above and below the cursor
-set backspace=2 " Allow backspacing over autoindent, EOL, and BOL
 set showmatch " Briefly jump to a paren once it's balanced
 set matchtime=2 " (for only .2 seconds).
 set nowrap " don't wrap text
 set linebreak " don't wrap textin the middle of a word
-set autoindent " always set autoindenting on
 set matchpairs+=<:> " show matching <> (html mainly) as well
-set mouse=a " Enable mouse usage (all modes)
 set cinoptions=:0,g0,(0,Ws,l1 " Set a few indentation parameters.
-set smarttab " Add and delete spaces in increments of 'shiftwidth' for tabs
 set switchbuf=useopen,usetab
 map <leader>q :tabclose<cr>
 map gp :tabprevious<cr>
