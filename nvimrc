@@ -38,7 +38,7 @@ Plug 'majutsushi/tagbar'
 Plug 'szw/vim-tags'
 Plug 'NLKNguyen/c-syntax.vim'
 Plug 'NLKNguyen/papercolor-theme'
-Plug 'kien/rainbow_parentheses.vim'
+Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'lilydjwg/colorizer'
 Plug 'mhinz/vim-startify'
 Plug 'ajpaulson/notes.vim'
@@ -185,17 +185,13 @@ nnoremap <leader>/ :Glcd<CR>
 " Map TagBar toggle to F8
 nmap <F8> :TagbarToggle<CR>
 
-"Rainbow Parentheses Always on
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
-
-let g:rbpt_max = 16
-let g:rbpt_loadcmd_toggle = 0
+"Rainbow Parentheses
+au VimEnter * RainbowParentheses
+let g:rainbow#max_level = 16
+let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
+let g:rainbow#blacklist = [233, 234]
 
 " NeoComplCache and NeoSnippet configuration
-let g:acp_enableAtStartup = 0
 let g:neocomplcache_enable_at_startup = 1
 let g:neocomplcache_enable_smart_case = 1
 let g:neocomplcache_sources_syntax_min_keyword_length = 2

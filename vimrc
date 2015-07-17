@@ -35,8 +35,9 @@ Plug 'Shougo/neosnippet'
 Plug 'honza/vim-snippets'
 Plug 'majutsushi/tagbar'
 Plug 'szw/vim-tags'
+Plug 'NLKNguyen/c-syntax.vim'
 Plug 'Pychimp/vim-luna'
-Plug 'kien/rainbow_parentheses.vim'
+Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'lilydjwg/colorizer'
 Plug 'mhinz/vim-startify'
 Plug 'ajpaulson/notes.vim'
@@ -75,7 +76,7 @@ set report=0 " : commands always print changed line count.
 set shortmess+=a " Use [+]/[RO]/[w] for modified/readonly/written.
 set ruler " Show some info, even without statuslines.
 set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,5c5V\ %P%) " a ruler on steroids
-set listchars=tab:>-,eol:¶,trail:≖,precedes:<,extends:> " Easily see tabs, spaces, end of line etc.
+set listchars=tab:▸\ ,eol:¶,trail:·,precedes:«,extends:» " Easily see tabs, spaces, end of line etc.
 set list
 set ignorecase " Default to using case insensitive searches,
 set smartcase " unless uppercase letters are used in the regex.
@@ -185,17 +186,13 @@ nnoremap <leader>/ :Glcd<CR>
 " Map TagBar toggle to F8
 nmap <F8> :TagbarToggle<CR>
 
-"Rainbow Parentheses Always on
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
-
-let g:rbpt_max = 16
-let g:rbpt_loadcmd_toggle = 0
+"Rainbow Parentheses
+au VimEnter * RainbowParentheses
+let g:rainbow#max_level = 16
+let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
+let g:rainbow#blacklist = [233, 234]
 
 " NeoComplete and NeoSnippets
-let g:acp_enableAtStartup = 0
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
 let g:neocomplete#fallback_mappings =
