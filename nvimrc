@@ -229,6 +229,9 @@ let g:neocomplcache_force_omni_patterns.c =
 let g:neocomplcache_force_omni_patterns.cpp =
 			\ '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
 
+" Open Plug window bottom, horizontal
+let g:plug_window='botright new'
+
 " Hack to disable colorcolumn for startify
 autocmd FileType startify setlocal colorcolumn&
 let g:startify_files_number = 3
