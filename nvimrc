@@ -30,8 +30,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'scrooloose/syntastic'
 Plug 'sheerun/vim-polyglot'
-Plug 'Shougo/vimproc.vim', { 'do': 'make' }
-Plug 'Shougo/neocomplcache'
+Plug 'Shougo/deoplete.nvim'
 Plug 'Shougo/neosnippet.vim'
 Plug 'honza/vim-snippets'
 Plug 'majutsushi/tagbar'
@@ -191,15 +190,6 @@ let g:rainbow#max_level = 16
 let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
 let g:rainbow#blacklist = [233, 234]
 
-" NeoComplCache and NeoSnippet configuration
-let g:neocomplcache_enable_at_startup = 1
-let g:neocomplcache_enable_smart_case = 1
-let g:neocomplcache_sources_syntax_min_keyword_length = 2
-let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
-inoremap <expr><C-g>    neocomplcache#undo_completion()
-inoremap <expr><C-l>    neocomplcache#complete_common_string()
-" Tab completion
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 " NeoSnippet mappings (^k to expand a selected snippet)
 imap <C-k>    <Plug>(neosnippet_expand_or_jump)
 smap <C-k>    <Plug>(neosnippet_expand_or_jump)
@@ -220,14 +210,17 @@ let g:neosnippet#enable_snipmate_compatibility = 1
 let g:neosnippet#disable_runtime_snippets = { '-' : 1, }
 let g:neosnippet#snippets_directory='~/.nvim/plugged/vim-snippets/snippets'
 
-if !exists('g:neocomplcache_force_omni_patterns')
-	let g:neocomplcache_force_omni_patterns = {}
-endif
-let g:neocomplcache_force_overwrite_completefunc = 1
-let g:neocomplcache_force_omni_patterns.c =
-			\ '[^.[:digit:] *\t]\%(\.\|->\)\w*'
-let g:neocomplcache_force_omni_patterns.cpp =
-			\ '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
+"Deoplete
+let g:deoplete#enable_at_startup = 1
+" <TAB> completion
+imap <silent><expr> <TAB>
+	\ pumvisible() ? "\<C-n>" :
+	\ <SID>check_back_space() ? "\<TAB>" :
+	\ deoplete#mappings#manual_complete()
+function! s:check_back_space()
+	let col = col('.') - 1
+	return !col || getline('.')[col - 1] =~ '\s'
+endfunction
 
 " Open Plug window bottom, horizontal
 let g:plug_window='botright new'
