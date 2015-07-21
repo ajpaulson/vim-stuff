@@ -212,6 +212,7 @@ let g:neosnippet#snippets_directory='~/.nvim/plugged/vim-snippets/snippets'
 
 "Deoplete
 let g:deoplete#enable_at_startup = 1
+let g:deoplete#auto_completion_start_length = 1
 " <TAB> completion
 imap <silent><expr> <TAB>
 	\ pumvisible() ? "\<C-n>" :
