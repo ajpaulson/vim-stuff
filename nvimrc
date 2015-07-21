@@ -30,9 +30,9 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'scrooloose/syntastic'
 Plug 'sheerun/vim-polyglot'
-Plug 'Shougo/vimproc', { 'do': 'make' }
+Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'Shougo/neocomplcache'
-Plug 'Shougo/neosnippet'
+Plug 'Shougo/neosnippet.vim'
 Plug 'honza/vim-snippets'
 Plug 'majutsushi/tagbar'
 Plug 'szw/vim-tags'
