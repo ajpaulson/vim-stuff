@@ -32,7 +32,7 @@ Plug 'scrooloose/syntastic'
 Plug 'sheerun/vim-polyglot'
 Plug 'Shougo/deoplete.nvim'
 Plug 'Shougo/neosnippet.vim'
-Plug 'honza/vim-snippets'
+Plug 'Shougo/neosnippet-snippets'
 Plug 'majutsushi/tagbar'
 Plug 'szw/vim-tags'
 Plug 'NLKNguyen/c-syntax.vim'
@@ -205,10 +205,7 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 if has('conceal')
 	set conceallevel=2 concealcursor=inv
 endif
-" Use Honza's snippets
-let g:neosnippet#enable_snipmate_compatibility = 1
-let g:neosnippet#disable_runtime_snippets = { '-' : 1, }
-let g:neosnippet#snippets_directory='~/.nvim/plugged/vim-snippets/snippets'
+autocmd InsertLeave * NeoSnippetClearMarkers
 
 "Deoplete
 let g:deoplete#enable_at_startup = 1
