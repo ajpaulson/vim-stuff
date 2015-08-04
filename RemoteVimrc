@@ -4,7 +4,6 @@ set backspace=indent,eol,start
 syntax on
 
 set background=dark
-colorscheme desert
 
 filetype plugin indent on
 
@@ -21,8 +20,6 @@ set numberwidth=1
 set ls=2
 set ruler
 set confirm
-set list
-set listchars=tab:>-,eol:¶,trail:≖,precedes:<,extends:>
 
 set history=50
 set tabstop=2
@@ -54,3 +51,9 @@ set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.i
 let mapleader=","
 "Remove trailing whitespace on <leader>S
 nnoremap <leader>S :%s/\s\+$//<cr>:let @/=' '<CR>
+
+"keep undo history across sessions by storing in file
+let s:vim_cache = expand('$HOME/.vim/backups')
+if filewritable(s:vim_cache) == 0 && exists("*mkdir")
+	call mkdir(s:vim_cache, "p", 0700)
+endif
