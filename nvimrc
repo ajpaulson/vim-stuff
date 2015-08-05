@@ -120,6 +120,8 @@ imap <c-j> <c-o><c-w>j
 imap <c-k> <c-o><c-w>k
 imap <c-l> <c-o><c-w>l
 imap <c-h> <c-o><c-w>h
+" Use ctrl-g in insert mode to input digraphs
+inoremap <c-g> <c-k>
 
 set clipboard+=unnamedplus "Neovim uses xclip or xsel
 noremap x "_x
