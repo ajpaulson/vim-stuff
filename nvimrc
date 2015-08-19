@@ -172,7 +172,7 @@ let g:smartusline_string_to_highlight = '[%t]'
 map <leader>s :Startify<CR>
 
 " Syntastic rules
-let g:syntastic_c_checkers = [ 'clang' ]
+let g:syntastic_c_checkers = [ 'clang_check' ]
 let g:syntastic_c_check_header = 1
 let g:syntastic_c_no_default_include_dirs = 1
 let g:syntastic_c_compiler = 'clang'
