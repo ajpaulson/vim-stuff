@@ -49,8 +49,6 @@ call plug#end()
 
 "  END BUNDLES / START MAIN RC
 "{{{
-runtime ftplugin/man.vim " enable :Man
-
 "  Basic Settings
 let mapleader="," " change the leader to be a comma vs slash
 set number " Display line numbers
