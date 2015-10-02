@@ -41,7 +41,6 @@ Plug 'Pychimp/vim-luna'
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'lilydjwg/colorizer'
 Plug 'mhinz/vim-startify'
-Plug 'ajpaulson/notes.vim'
 Plug 'molok/vim-smartusline'
 call plug#end()
 "}}}
