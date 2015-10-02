@@ -123,9 +123,7 @@ set clipboard+=unnamedplus "Neovim uses xclip or xsel
 noremap x "_x
 vnoremap p "_c<Esc>P
 " show a line at column 80
-if exists("&colorcolumn")
-	set colorcolumn=80
-endif
+set colorcolumn=80
 
 autocmd BufReadPost *
   \ if line("'\"") > 1 && line("'\"") <= line("$") |
