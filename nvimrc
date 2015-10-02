@@ -130,11 +130,6 @@ autocmd BufReadPost *
   \   exe "normal! g`\"" |
   \ endif
 
-" ,v brings up my .vimrc
-" ,V reloads it -- making all changes active (have to save first)
-map <leader>v :tabe ~/.nvimrc<CR><C-W>_
-map <silent> <leader>V :source ~/.nvimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
-
 "Spell Check (f for fuckup)
 map <silent> <leader>f :set spell!<CR>
 " Set working directory
