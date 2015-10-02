@@ -145,11 +145,6 @@ autocmd BufWritePre * set ff=unix
 " Prevent vim from setting filetype to `plaintex`
 let g:tex_flavor='latex'
 
-" Tabline colours
-hi TabLineFill ctermfg=23 ctermbg=231
-hi Tabline cterm=NONE ctermfg=231 ctermbg=23
-hi TablineSel cterm=NONE ctermfg=0 ctermbg=149
-
 set t_Co=256 " Some terminals *REALLY* need this
 "}}}
 
