@@ -64,7 +64,6 @@ set omnifunc=syntaxcomplete#Complete
 set grepprg=ack-grep " replace the default grep program with ack
 set splitbelow
 set splitright
-set ls=2 " Always show status line ('laststatus')
 set vb t_vb= " Disable all bells. I hate ringing/flashing.
 set confirm " Y-N-C prompt if closing with unsaved changes.
 set showcmd " Show incomplete normal mode commands as I type.
@@ -238,6 +237,7 @@ let g:startify_skiplist = [
 			\ '.*lock',
 			\ '.news_time',
 			\ '.viminfo',
+			\ '.nviminfo',
 			\ '.zcompdump*',
 			\ '.*session-errors*',
 			\ '.nvim*',
