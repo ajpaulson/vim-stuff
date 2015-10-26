@@ -1,27 +1,27 @@
 "  Alex's nvimrc
 "{{{
 " Set up vim-plug
-let s:vim_plugger = expand('$HOME/.nvim/autoload/plug.vim')
+let s:vim_plugger = expand('$HOME/.config/nvim/autoload/plug.vim')
 if filewritable(s:vim_plugger) == 0
-	!curl -fLo ~/.nvim/autoload/plug.vim --create-dirs
+	!curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
 		\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 	autocmd VimEnter * PlugInstall
 endif
 
 " Touch untracked config files
 let colourme=1
-let colour_vim=expand('~/.nvim/colours.vim')
+let colour_vim=expand('~/.config/nvim/colours.vim')
 if !filereadable(colour_vim)
 	echo "Creating colour file - declare colorscheme in colours.vim"
 	echo ""
-	silent !echo 'colorscheme luna-term' > ~/.nvim/colours.vim
+	silent !echo 'colorscheme luna-term' > ~/.config/nvim/colours.vim
 	let colourme=0
 endif
 "}}}
 
 "  Plugins go here:
 "{{{
-call plug#begin('~/.nvim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
@@ -53,9 +53,9 @@ let mapleader="," " change the leader to be a comma vs slash
 set number " Display line numbers
 set relativenumber
 set numberwidth=1 " using only 1 column (and 1 space) while possible
-source ~/.nvim/colours.vim
-source ~/.nvim/statusline.vim
-source ~/.nvim/ScratchEdit.vim
+source ~/.config/nvim/colours.vim
+source ~/.config/nvim/statusline.vim
+source ~/.config/nvim/ScratchEdit.vim
 set title " show title in console title bar
 set wildignore+=*.o,*.obj,.git,*.pyc " Ignore these files when completing
 set completeopt=menuone,longest,preview " don't select first item, follow typing in autocomplete
@@ -85,11 +85,11 @@ augroup END
 set noswapfile " Turn off swap files
 set nowb "no writebackup
 "keep undo history across sessions by storing in file
-let s:vim_cache = expand('$HOME/.nvim/backups')
+let s:vim_cache = expand('$HOME/.config/nvim/backups')
 if filewritable(s:vim_cache) == 0 && exists("*mkdir")
 	call mkdir(s:vim_cache, "p", 0700)
 endif
-set undodir=~/.nvim/backups
+set undodir=~/.config/nvim/backups
 set undofile
 set cursorline " have a line indicate the cursor location
 set cursorcolumn " have a column to indicate the cursor location
@@ -215,7 +215,7 @@ autocmd FileType startify setlocal colorcolumn&
 let g:startify_files_number = 3
 let g:startify_change_to_vcs_root = 1
 let g:startify_session_persistence = 1
-let g:startify_session_dir = '~/.nvim/sessions'
+let g:startify_session_dir = '~/.config/nvim/sessions'
 let g:startify_change_to_dir = 1
 let g:startify_list_order = [
 			\ ['    My Sessions'],
@@ -243,6 +243,6 @@ let g:startify_skiplist = [
 			\ '.nvim*',
 			\]
 
-source ~/.nvim/headers/kraken.vim
+source ~/.config/nvim/headers/kraken.vim
 "}}}
 " vim:ft=vim:fdm=marker
