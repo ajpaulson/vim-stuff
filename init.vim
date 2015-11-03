@@ -21,7 +21,7 @@ endif
 
 "  Plugins go here:
 "{{{
-call plug#begin('~/.config/nvim/plugged')
+call plug#begin()
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
