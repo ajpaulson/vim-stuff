@@ -72,6 +72,7 @@ set shortmess+=a " Use [+]/[RO]/[w] for modified/readonly/written.
 set ruler " Show some info, even without statuslines.
 set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,5c5V\ %P%) " a ruler on steroids
 set listchars=tab:▸\ ,eol:¶,trail:·,precedes:«,extends:» " Easily see tabs, spaces, end of line etc.
+set fillchars=vert:▎,fold:▂
 set list
 au TermOpen * setlocal nolist nocursorline nocursorcolumn " Clean up for :terminal
 set ignorecase " Default to using case insensitive searches,
