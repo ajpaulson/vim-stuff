@@ -1,5 +1,5 @@
 set statusline=%#identifier#
-set statusline+=[%t]     "filename
+set statusline+=[%t]\ %{ReadOnly()}     "filename
 set statusline+=%*
 
 "Warn if not unix
@@ -14,10 +14,6 @@ set statusline+=%*
 
 set statusline+=%h      "helpfile flag
 set statusline+=%y      "filetype
-"read only flag
-set statusline+=%#identifier#
-set statusline+=%r
-set statusline+=%*
 
 "modified flag
 set statusline+=%#identifier#
@@ -49,6 +45,8 @@ set statusline+=%=      "left/right separator
 set statusline+=%#Keyword#
 set statusline+=%{tagbar#currenttag('%s','','f')}
 set statusline+=%*
+
+set statusline+=%-3(%{FileSize()}%) "FileSize
 
 set statusline+=%{StatuslineCurrentHighlight()}\ \ "current highlight
 set statusline+=%c,     "cursor column
@@ -168,4 +166,34 @@ function! s:Median(nums)
     else
         return (nums[l/2] + nums[(l/2)-1]) / 2
     endif
+endfunction
+
+" Find out current buffer's size and output it.
+function! FileSize()
+  let bytes = getfsize(expand('%:p'))
+  if (bytes >= 1024)
+    let kbytes = bytes / 1024
+  endif
+  if (exists('kbytes') && kbytes >= 1000)
+    let mbytes = kbytes / 1000
+  endif
+
+  if bytes <= 0
+    return '0'
+  endif
+
+  if (exists('mbytes'))
+    return mbytes . 'MB '
+  elseif (exists('kbytes'))
+    return kbytes . 'KB '
+  else
+    return bytes . 'B '
+  endif
+endfunction
+
+function! ReadOnly()
+  if &readonly || !&modifiable
+    return ' '
+  else
+    return ''
 endfunction
