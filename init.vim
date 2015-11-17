@@ -52,6 +52,7 @@ call plug#end()
 let mapleader="," " change the leader to be a comma vs slash
 set number " Display line numbers
 set relativenumber
+set lazyredraw " macros go faster when you don't redraw during them.
 set numberwidth=1 " using only 1 column (and 1 space) while possible
 source ~/.config/nvim/colours.vim
 source ~/.config/nvim/statusline.vim
