@@ -14,7 +14,7 @@ let colour_vim=expand('~/.config/nvim/colours.vim')
 if !filereadable(colour_vim)
 	echo "Creating colour file - declare colorscheme in colours.vim"
 	echo ""
-	silent !echo 'colorscheme luna-term' > ~/.config/nvim/colours.vim
+	silent !echo 'colorscheme PaperColor' > ~/.config/nvim/colours.vim
 	let colourme=0
 endif
 "}}}
