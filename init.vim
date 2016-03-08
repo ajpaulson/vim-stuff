@@ -43,6 +43,7 @@ Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'lilydjwg/colorizer'
 Plug 'mhinz/vim-startify'
 Plug 'molok/vim-smartusline'
+Plug 'lluchs/vim-wren'
 call plug#end()
 "}}}
 
