@@ -38,7 +38,7 @@ Plug 'Shougo/neoinclude.vim'
 Plug 'majutsushi/tagbar'
 Plug 'szw/vim-tags'
 Plug 'NLKNguyen/c-syntax.vim'
-Plug 'NLKNguyen/papercolor-theme'
+Plug 'NLKNguyen/papercolor-theme', { 'tag': 'v0.7' }
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'lilydjwg/colorizer'
 Plug 'mhinz/vim-startify'
