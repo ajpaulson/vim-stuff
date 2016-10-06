@@ -28,7 +28,7 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
-Plug 'scrooloose/syntastic'
+Plug 'w0rp/ale'
 Plug 'sheerun/vim-polyglot'
 Plug 'Shougo/deoplete.nvim'
 Plug 'Shougo/neosnippet.vim'
@@ -156,13 +156,6 @@ let g:smartusline_string_to_highlight = '[%t]'
 
 " Quick open startify
 map <leader>s :Startify<CR>
-
-" Syntastic rules
-let g:syntastic_c_checkers = [ 'clang_check' ]
-let g:syntastic_c_check_header = 1
-let g:syntastic_c_no_default_include_dirs = 1
-let g:syntastic_c_compiler = 'clang'
-let g:syntastic_sh_checkers=[ "bashate" ]
 
 " close preview window automatically when we move around
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
