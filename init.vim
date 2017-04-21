@@ -79,6 +79,8 @@ set list
 au TermOpen * setlocal nolist nocursorline nocursorcolumn " Clean up for :terminal
 set ignorecase " Default to using case insensitive searches,
 set smartcase " unless uppercase letters are used in the regex.
+" True Colours
+set termguicolors
 " Pane independent search
 augroup last_search
 	autocmd!
