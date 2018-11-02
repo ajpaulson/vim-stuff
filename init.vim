@@ -14,7 +14,7 @@ let colour_vim=expand('~/.config/nvim/colours.vim')
 if !filereadable(colour_vim)
 	echo "Creating colour file - declare colorscheme in colours.vim"
 	echo ""
-	silent !echo 'colorscheme PaperColor' > ~/.config/nvim/colours.vim
+	silent !echo 'colorscheme onedark' > ~/.config/nvim/colours.vim
 	let colourme=0
 endif
 "}}}
@@ -38,12 +38,14 @@ Plug 'Shougo/neoinclude.vim'
 Plug 'majutsushi/tagbar'
 Plug 'szw/vim-tags'
 Plug 'NLKNguyen/c-syntax.vim'
-Plug 'NLKNguyen/papercolor-theme', { 'tag': 'v0.7' }
+Plug 'joshdick/onedark.vim'
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'lilydjwg/colorizer'
 Plug 'mhinz/vim-startify'
 Plug 'molok/vim-smartusline'
 Plug 'lluchs/vim-wren'
+Plug 'hashivim/vim-terraform'
+Plug 'hashivim/vim-consul'
 call plug#end()
 "}}}
 
@@ -207,6 +209,9 @@ endfunction
 
 " Open Plug window bottom, horizontal
 let g:plug_window='botright new'
+
+" Allow Vim-Terraform to override indentation and syntax
+let g:terraform_align=1
 
 " Hack to disable colorcolumn for startify
 autocmd FileType startify setlocal colorcolumn&
